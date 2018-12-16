@@ -1,0 +1,22 @@
+{
+  "name": "multi-page",
+  "version": "1.0.0",
+  "description": "webpack multi page.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "keywords": [
+    "webpack",
+    "multi-page"
+  ],
+  "author": "lzb",
+  "license": "MIT",
+  "devDependencies": {
+    "html-webpack-plugin": "^4.0.0-beta.5",
+    "loadsh": "^0.0.3",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2"
+  }
+}
