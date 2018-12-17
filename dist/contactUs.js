@@ -166,7 +166,7 @@ const c = __webpack_require__(/*! ./common/c */ "./src/common/c.js")
 __webpack_require__(/*! ../assets/css/main.css */ "./assets/css/main.css")
 a()
 c()
-
+document.body.querySelector('.container').innerHTML = '<h1> 这是 contact-us 页</h1>'
 
 /***/ }),
 

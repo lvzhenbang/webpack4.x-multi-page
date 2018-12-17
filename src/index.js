@@ -9,3 +9,5 @@ a()
 b()
 c()
 d()
+
+document.body.querySelector('.container').innerHTML= '<h1> 这是首页 </h1>'

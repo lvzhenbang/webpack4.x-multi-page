@@ -32,6 +32,11 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           'css-loader'
         ]
+      },
+      {
+        include: path.resolve(__dirname, 'pages/commons'),
+        test: /\.html$/,
+        loader: "html-loader"
       }
     ]
   },
@@ -47,20 +52,24 @@ module.exports = {
         'keywords': 'webpack, multi-page, 首页',
         'author': 'https://github.com/lvzhenbang/'
       },
-      favicon: './assets/19884132.jpg'
+      favicon: './assets/19884132.jpg',
+      template: './pages/template.html',
+      // minify: true
     }),
     new HtmlWebapckPlugin({
       /* inital page */
       filename: 'aboutUs.html',
       chunks: ['aboutUs'],
       /* page head */
-      title: 'index',
+      title: 'aboutus',
       meta: {
         'description': '这是 about-us 页面',
         'keywords': 'webpack, multi-page, about-us',
         'author': 'https://github.com/lvzhenbang/'
       },
-      favicon: './assets/19884132.jpg'
+      favicon: './assets/19884132.jpg',
+      template: './pages/template.html',
+      minify: true
     }),
     new HtmlWebapckPlugin({
       /* inital page */
@@ -73,7 +82,9 @@ module.exports = {
         'keywords': 'webpack, multi-page, contact-us',
         'author': 'https://github.com/lvzhenbang/'
       },
-      favicon: './assets/19884132.jpg'
+      favicon: './assets/19884132.jpg',
+      template: './pages/template.html',
+      minify: true
     }),
     new MiniCssExtractPlugin()
   ],
