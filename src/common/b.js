@@ -1,4 +1,5 @@
 const _ = require('loadsh')
+require('../../assets/css/b.css')
 module.exports = function() {
   console.log('b')
   let users = [

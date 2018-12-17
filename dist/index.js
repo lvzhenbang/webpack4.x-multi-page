@@ -179,6 +179,8 @@ const b = __webpack_require__(/*! ./common/b */ "./src/common/b.js")
 const c = __webpack_require__(/*! ./common/c */ "./src/common/c.js")
 const d = __webpack_require__(/*! ./common/d */ "./src/common/d.js")
 
+__webpack_require__(/*! ../assets/css/main.css */ "./assets/css/main.css")
+
 a()
 b()
 c()
@@ -200,4 +202,4 @@ module.exports = __webpack_require__(/*! ./src/utils/load.js */"./src/utils/load
 /***/ })
 
 /******/ });
-//# sourceMappingURL=index.min.js.map
+//# sourceMappingURL=index.js.map

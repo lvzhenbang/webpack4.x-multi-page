@@ -1,5 +1,5 @@
 const a = require('./common/a')
 const c = require('./common/c')
-
+require('../assets/css/main.css')
 a()
 c()

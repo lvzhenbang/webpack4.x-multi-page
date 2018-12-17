@@ -1,4 +1,5 @@
 const _ = require('loadsh')
+require('../../assets/css/a.css')
 module.exports = function() {
   console.log('a')
   const arr = [1,2,3,4,5]
