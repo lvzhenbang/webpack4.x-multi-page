@@ -1,0 +1,44 @@
+.header { 
+  width: 100%;
+  background-color: burlywood;
+  background-image: url(../../../imgs/base64/fe.jpg);
+  background-position: top 0 left 60px;
+  background-repeat: no-repeat;
+  background-size: 100px 66px;
+}
+.header ul {
+  width: 480px;
+  margin: 0 auto;
+  padding: 0;
+  *zoom: 1;
+}
+.header ul:after,
+.header ul:before {
+  display: table;
+  content: ''
+}
+
+.header ul:after {
+  clear: both;
+}
+.header li {
+  list-style: none;
+  padding: 0 10px;
+  float: left;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+}
+
+.header li a {
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+}
+
+.header li.active,
+.header li:hover {
+  border-bottom-color: #000;
+}

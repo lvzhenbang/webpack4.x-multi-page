@@ -4,8 +4,8 @@
   "description": "webpack multi page.",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production"
+    "dev": "webpack-dev-server --env development",
+    "build": "webpack --env production"
   },
   "keywords": [
     "webpack",
@@ -14,13 +14,29 @@
   "author": "lzb",
   "license": "MIT",
   "devDependencies": {
+    "cross-env": "^5.2.0",
     "css-loader": "^2.0.1",
+    "file-loader": "^3.0.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^4.0.0-beta.5",
     "loadsh": "^0.0.3",
     "mini-css-extract-plugin": "^0.5.0",
     "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
     "webpack": "^4.27.1",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.13"
+  },
+  "dependencies": {
+    "bootstrap": "^4.2.1",
+    "image-webpack-loader": "^4.6.0",
+    "jquery": "^3.3.1",
+    "node-sass": "^4.11.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "pug": "^2.0.3",
+    "pug-loader": "^2.4.0",
+    "sass-loader": "^7.1.0",
+    "uglifyjs-webpack-plugin": "^2.1.0",
+    "webpack-spritesmith": "^0.5.4"
   }
 }

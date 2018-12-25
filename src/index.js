@@ -1,13 +1,7 @@
-const a = require('./common/a')
-const b = require('./common/b')
-const c = require('./common/c')
-const d = require('./common/d')
+import $ from 'jquery'
 
-require('../assets/css/main.css')
+// 设置当前导航标记
+$('.header li').eq(0).addClass('active')
 
-a()
-b()
-c()
-d()
-
-document.body.querySelector('.container').innerHTML= '<h1> 这是首页 </h1>'
+// 添加container内容
+$('<h1> 这是 首页 </h1>').css('color', 'white').prependTo($('.container'))
