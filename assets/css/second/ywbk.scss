@@ -1,0 +1,41 @@
+.sj_ywbk ul {
+  padding-left: 0;
+}
+
+.sj_ywbk li {
+  list-style: none;
+}
+.sj_ywbk img,
+.sj_school img {
+  display: block;
+  margin: 40px auto;
+  border: none;
+}
+
+.sj_ywbk .sj_img-info,
+.sj_school .sj_img-info {
+  margin: 18px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.sj_ywbk table {
+  margin: 0 auto;
+}
+
+.sj_yw_item table th,
+.sj_yw_item table td {
+  width: 268px;
+  height: 48px;
+  padding: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #252525;
+  border: 1px solid #afafaf;
+}
+
+/* culture */
+.sj_ywbk p span {
+  display: inline-block;
+  font-weight: bold;
+}

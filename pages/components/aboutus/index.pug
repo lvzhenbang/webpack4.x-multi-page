@@ -1,0 +1,10 @@
+//- 关于我们
+include ../commons/title/index-title.pug
+
+div(class="about-us")
+  +index-title('关于我们', 'ABOUT US')
+  div(class="about-list")
+    each desc in ['互联网金融', '全品类金融', '商业地产', '餐饮', '文化', '大健康']
+      div(class="about-item")
+        div(class="icon")
+        div(class="desc")= desc

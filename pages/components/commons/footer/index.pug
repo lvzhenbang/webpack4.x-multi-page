@@ -1,0 +1,27 @@
+- var map = require('./map')
+//- footer
+div(class="sj_footer")
+  div(class="sj_wrapper")
+    div(class="sj_map_box clearfix")
+      ul(class="sj_map_nav clearfix")
+        each item in map
+          li(class="sj_map_item")
+            a(href=item.href? item.href : 'javascript:;' class="sj_title")= item.text
+            ul(class="sj_map_menu")
+              each subItem in item.subMap ? item.subMap : []
+                li
+                  a(href=subItem.href)= subItem.text
+
+      //- user service
+      div(class="sj_user_service")
+        span 在线客服：400-075-2005
+        span 工作时间：9:00-18:00&nbsp;周一至周五
+
+      //- qrcode
+      div(class="sj_qrcode")
+        img(src=require('path').join(__dirname, 'assets/imgs/other/index/sj-qr.png') alt="微信公众号二维码")
+        div 扫一扫关注圣捷投资
+        
+  //- copyright
+  div(class="sj_copyright")
+    p 京ICP备15002298号&nbsp;京公网安备11010102001651号

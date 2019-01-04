@@ -1,0 +1,40 @@
+- var career = require('./shzr.js').career
+
+each item in career && career.length ? career : []
+  if item.title !== ''
+    div(class="sj_yw_item")
+      div(class="sj_i_one")= item.title
+      div(class="sj_i_two")
+        each citem in item.content && item.content.length ? item.content : []
+          if citem.type === 'text'
+            p= citem.text
+          else if citem.type === 'img'
+            img(src=citem.src width=citem.width height=citem.height)
+          else if citem.type === 'form'
+            table
+              thead
+                each th in citem.th && citem.th.length ? citem.th : []
+                  th= th
+              tbody
+                each td in citem.td && citem.td.length ? citem.td : []
+                  tr
+                    td= td.date
+                    td= td.num
+                    td= td.rate
+  else
+    each citem in item.content && item.content.length ? item.content : []
+      if citem.type === 'text'
+        p= citem.text
+      else if citem.type === 'img'
+        img(src=citem.src width=citem.width height=citem.height)
+      else if citem.type === 'form'
+        table
+          thead
+            each th in citem.th && citem.th.length ? citem.th : []
+              th= th
+          tbody
+            each td in citem.td && citem.td.length ? citem.td : []
+              tr
+                td= td.date
+                td= td.num
+                td= td.rate

@@ -1,0 +1,23 @@
+doctype html
+
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    title= htmlWebpackPlugin.options.title
+    script(src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js")
+    script(src="http://api.map.baidu.com/api?v=2.0&ak=zZ1jDRxcKuPUEX4Ar77rxaLqhk4v6RAj")
+    
+  body
+    //- header
+    include ./components/commons/header/index.pug
+    //- container
+    include ./components/commons/container/index.pug
+    //- footer
+    include ./components/commons/footer/index.pug
+    //- backtop
+    include ./components/commons/backtop/index.pug
+    //- script
+    //-   include ./utils/map.js
+      

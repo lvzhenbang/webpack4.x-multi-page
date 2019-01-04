@@ -1,0 +1,13 @@
+- var events = require('./zjsj.js').events
+
+each item in events && events.length ? events : []
+  if item.list
+    ul
+      each sp in item.list
+        li
+          div(class="sj_i_one")= sp.date
+          div(class="sj_i_two")
+            each pt in sp.list
+              p= pt
+  else
+    p= item

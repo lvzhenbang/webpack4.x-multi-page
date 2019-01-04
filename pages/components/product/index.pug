@@ -1,0 +1,55 @@
+//- product
+include ../commons/title/index-title.pug
+
+-
+  var path = require('path')
+
+  function loadImg(str) {
+    return path.join(__dirname, 'assets/imgs/other/' + str)
+  }
+
+  var product = {
+    cn_name: '金融产品',
+    en_name: 'PRODUCT',
+    list: [
+      {
+        cn_name: '信用贷款',
+        en_name: 'CREDIT LOANS',
+        href: 'sj-wealth.html',
+        img: loadImg('index/sj-xydk.jpg')
+      }, {
+        cn_name: '抵押贷款',
+        en_name: 'MORTGAGE LOANS',
+        href: 'sj-wealth.html',
+        img: loadImg('index/sj-dydk.jpg')
+      }, {
+        cn_name: '企业经营贷款',
+        en_name: 'BUSINESS LOANS',
+        href: 'sj-wealth.html',
+        img: loadImg('index/sj-qyjydk.jpg')
+      }, {
+        cn_name: '个人消费贷款',
+        en_name: 'CONSUMPTION LOANS',
+        href: 'sj-wealth.html',
+        img: loadImg('index/sj-grxfdk.jpg')
+      }  
+    ]
+  }
+
+div(class="sj_loan_product container")
+
+  +index-title(product.cn_name, product.en_name)
+
+  div(class="sj_product-list clearfix")
+    each item in product.list && product.list.length ? product.list : []
+      div(class="sj_product-item")
+        a(href=item.href)
+          div(class="sj_left")
+            div(class="sj_top")
+              div= item.cn_name
+              div= item.en_name
+            div(class="sj_bottom")
+              div(class="sj_more")
+                span MORE
+          div(class="sj_right")
+            img(src=item.img alt=item.cn_name)

@@ -1,0 +1,50 @@
+/* 企业风采 */
+.style-list {
+  width: 1240px;
+  margin: 0 -7px;
+  margin-top: 28px;
+  overflow: hidden;
+}
+
+.style-item {
+  position: relative;
+  float: left;
+  margin: 0 5px 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.style-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  -webkit-transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}
+
+.style-item .desc {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  color: #f4f4f4;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.style-item:hover {
+  border-radius: 4px;
+  box-shadow: 0px 0px 9px #ddd;
+}
+
+.style-item:hover img {
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+  -webkit-transform: scale3d(1.25, 1.25, 1.0);
+  transform: scale3d(1.25, 1.25, 1.0);
+}
+
+.style-item:hover .desc {
+  background: rgba(29, 32, 136, .8);
+}

@@ -6,22 +6,27 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+const multipage = require('./multipage.config')
+
+let config = {
+  devUrl: 'http://localhost:8080/',
+  deployUrl: 'http://39.105.223.81:8083/'
+}
+
+let entry = multipage.entry,
+    plugins = multipage.plugins
 
 module.exports = (mode) => {
   let isDev = mode !== 'production'
-  // console.log(isDev)
   return {
-    'entry': {
-      index: ['./src/index.js', './src/css.js'],
-      aboutUs: ['./src/aboutUs.js', './src/css.js'],
-      contactUs: ['./src/contactUs.js', './src/css.js'],
-      recruitment: ['./src/recruitment.js', './src/css.js']
-    },
+    entry: entry,
     mode: mode,
     output: {
       path: path.resolve(__dirname, 'dist/'),
-      filename: isDev ? 'static/js/[name].js' : 'static/js/[name].[contenthash].js',
-      publicPath: isDev ? 'http://localhost:8080/' : 'http://localhost:8083/'
+      filename: isDev ? 'assets/js/[name].js' : 'assets/js/[name].[contenthash].js',
+      publicPath: isDev ? config.devUrl : config.deployUrl
     },
     devServer: {
       open: true
@@ -42,14 +47,13 @@ module.exports = (mode) => {
       ]
     },
     externals: {
-      commonjs: 'jquery',
-      amd: 'jquery',
-      root: '$'
+      jquery: 'jQuery',
+      BMap: 'BMap'
     },
     module: {
       rules: [
         {
-          include: path.resolve(__dirname, 'src/assets/css/'),
+          include: path.resolve(__dirname, 'assets/css/'),
           test: /\.scss$/,
           use: [
             MiniCssExtractPlugin.loader,
@@ -58,19 +62,9 @@ module.exports = (mode) => {
           ]
         },
         {
-          include: path.resolve(__dirname, 'src/pages/'),
+          include: path.resolve(__dirname, 'pages/'),
           test: /\.pug$/,
           loader: 'pug-loader'
-        },
-        {
-          include: path.resolve(__dirname, 'src/assets/imgs/base64/'),
-          test: /\.(png|jpe?g)$/,
-          use: [{
-            loader: 'url-loader',
-            // options: {
-            //   limit: 30720 // 30kb
-            // }
-          }]
         },
         {
           include: path.resolve(__dirname, 'assets/fonts/'),
@@ -85,14 +79,24 @@ module.exports = (mode) => {
           }]
         },
         {
-          include: path.resolve(__dirname, 'src/assets/imgs/other/'),
+          include: path.resolve(__dirname, 'assets/imgs/base64/'),
+          test: /\.(png|jpe?g)$/,
+          use: [{
+            loader: 'url-loader',
+            // options: {
+            //   limit: 30720 // 30kb
+            // }
+          }]
+        },
+        {
+          include: path.resolve(__dirname, 'assets/imgs/other/'),
           test: /\.(png|jpe?g|gif)$/,
           use: [
             {
               loader: 'file-loader',
               options: {
                 name: isDev ? '[name].[ext]' : '[name].[hash].[ext]',
-                outputPath: 'static/imgs/'
+                outputPath: 'assets/imgs/'
               }
             }, {
               loader: 'image-webpack-loader',
@@ -118,86 +122,19 @@ module.exports = (mode) => {
         }
       ]
     },
-    plugins: [
-      new HtmlWebapckPlugin({
-        /* inital page */
-        filename: 'index.html',
-        chunks: ['index'],
-        /* page head */
-        title: 'index',
-        meta: {
-          'description': '这是首页',
-          'keywords': 'webpack, multi-page, 首页',
-          'author': 'https://github.com/lvzhenbang/'
-        },
-        favicon: path.resolve(__dirname, 'src/assets/favicon.jpg'),
-        template: path.resolve(__dirname, 'src/pages/template.pug'),
-        // minify: true
-      }),
-      new HtmlWebapckPlugin({
-        /* inital page */
-        filename: 'aboutUs.html',
-        chunks: ['aboutUs'],
-        /* page head */
-        title: 'aboutus',
-        meta: {
-          'description': '这是 about-us 页面',
-          'keywords': 'webpack, multi-page, about-us',
-          'author': 'https://github.com/lvzhenbang/'
-        },
-        favicon: path.resolve(__dirname, 'src/assets/favicon.jpg'),
-        template: path.resolve(__dirname, 'src/pages/template.pug'),
-        minify: true
-      }),
-      new HtmlWebapckPlugin({
-        /* inital page */
-        filename: 'contactUs.html',
-        chunks: ['contactUs'],
-        /* page head */
-        title: 'index',
-        meta: {
-          'description': '这是 contact-us 页面',
-          'keywords': 'webpack, multi-page, contact-us',
-          'author': 'https://github.com/lvzhenbang/'
-        },
-        favicon: path.resolve(__dirname, 'src/assets/favicon.jpg'),
-        template: path.resolve(__dirname, 'src/pages/template.pug'),
-        minify: true
-      }),
-      new HtmlWebapckPlugin({
-        /* inital page */
-        filename: 'recruitment.html',
-        chunks: ['recruitment'],
-        /* page head */
-        title: 'recruitment',
-        meta: {
-          'description': '这是 招聘 页面',
-          'keywords': 'webpack, multi-page, 招聘',
-          'author': 'https://github.com/lvzhenbang/'
-        },
-        favicon: path.resolve(__dirname, 'src/assets/favicon.jpg'),
-        template: path.resolve(__dirname, 'src/pages/recruitment.pug'),
-        minify: true
-      }),
+    plugins: plugins.concat([
       new MiniCssExtractPlugin({
-        filename: isDev ? 'static/css/[name].css' : 'static/css/[name].[hcontentash].css',
-        chunkFilename: isDev ? 'static/css/[id].css' : 'static/css/[id].[contenthash].css'
+        filename: isDev ? 'assets/css/[name].css' : 'assets/css/[name].[contenthash].css',
+        chunkFilename: isDev ? 'assets/css/[id].css' : 'assets/css/[id].[contenthash].css'
       }),
-      new SpritesmithPlugin({
-        src: {
-            cwd: path.resolve(__dirname, 'src/assets/imgs/sprites/productus/'),
-            glob: '*.png'
-        },
-        target: {
-          image: path.resolve(__dirname, 'src/assets/imgs/other/productus-sprite.png'),
-          css: path.resolve(__dirname, 'src/assets/css/productus/productus-sprite.scss')
-        },
-        apiOptions: {
-          cssImageRef: '../../imgs/other/productus-sprite.png'
+      new CopyWebpackPlugin([
+        {
+          from: path.resolve(__dirname, 'assets/imgs/other/'),
+          to: path.resolve(__dirname, 'dist/assets/imgs/other/'),
+          ignore: ['.*']
         }
-      })
-    ],
+      ])
+    ]),
     devtool: 'source-map'
   }
 }
-  

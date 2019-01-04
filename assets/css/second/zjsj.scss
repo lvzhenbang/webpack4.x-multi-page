@@ -1,0 +1,107 @@
+.sj_i_one {
+  color: #1853cb;
+}
+
+.sj_i_two {
+  color: #666666;
+}
+
+/* speech */
+.sj_speech {
+  padding: 0 20px;
+}
+
+.sj_speech p {
+  font-family: GB, Adobe;
+}
+
+.sj_speech p:nth-of-type(1) {
+  font-weight: bold;
+  color: #666666;
+  text-indent: 0;
+}
+
+.sj_speech p:nth-last-of-type(1) {
+  text-align: right;
+}
+
+.sj_speech img {
+  float: right;
+  width: 314px;
+  height: 390px;
+  margin-left: 15px;
+  margin-bottom: 20px;
+}
+
+/* culture */
+.sj_culture ul {
+  padding-left: 0;
+  text-align: center;
+}
+
+.sj_culture li {
+  list-style: none;
+  margin-bottom: 80px;
+}
+
+.sj_culture li .sj_i_one {
+  font-size: 32px;
+  line-height: 1.0;
+}
+
+.sj_culture li .sj_i_two {
+  margin-top: 24px;
+  font-size: 22px;
+  line-height: 1.0;
+}
+
+/* strategy */
+.sj_strategy .sj_i_two p {
+  text-indent: 1em;
+}
+
+
+/* team */
+.sj_team,
+.sj_celebrites {
+  padding: 0 62px;
+}
+.sj_card {
+  list-style: none;
+  margin-bottom: 78px;
+}
+
+.sj_card img,
+.sj_card .sj_t_desc {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.sj_card img {
+  width: 280px;
+  height: 340px;
+}
+
+.sj_card .sj_t_desc {
+  width: 790px;
+  margin-left: 30px;
+  font-size: 22px;
+}
+
+.sj_card .sj_t_desc p {
+  text-indent: 0;
+  line-height: 1.5;
+  margin: 14px 0;
+}
+
+.sj_card .sj_t_desc p:nth-of-type(1) {
+  margin-top: 0;
+}
+
+.sj_card .sj_t_desc p:nth-last-of-type(1) {
+  margin-bottom: 0;
+}
+
+.sj_card p.sj_team_name {
+  color: #155ad1;
+}

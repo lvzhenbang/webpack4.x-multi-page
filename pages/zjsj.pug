@@ -1,0 +1,64 @@
+extends ./template.pug
+
+block banners
+  include ./components/commons/banner/index.pug
+
+block contents
+
+  include ./components/commons/title/block-title.pug
+  include ./components/commons/tab/index.pug
+
+  -
+    var zjsj = {
+      cn_name: '走进圣捷',
+      en_name: 'INTO SHENGJIE',
+      tabs: [
+        {
+          cn_name: '圣捷投资',
+          en_name: 'SHENGJIE INVESTMENT',
+          type: 'investment'
+        }, {
+          cn_name: '董事长致辞',
+          en_name: 'CHAIRMANS SPEECH',
+          type: 'speech'
+        }, {
+          cn_name: '企业文化',
+          en_name: 'CORPORATE CULTURE',
+          type: 'culture'
+        }, {
+          cn_name: '圣捷大事记',
+          en_name: 'SHENGJIE BIG EVENTT',
+          type: 'event'
+        }, {
+          cn_name: '发展战略',
+          en_name: 'DEVELOPMENT STRATEGY',
+          type: 'strategy'
+        }, {
+          cn_name: '管理团队',
+          en_name: 'MANAGEMENT TEAM',
+          type: 'team'
+        }
+      ]
+    }
+  
+  +block-title(zjsj.cn_name, zjsj.en_name)
+
+  +tab(zjsj.tabs)
+
+  div(class="tab-content sj_investment show")
+    include ./components/second/zjsj/investment.pug
+    
+  div(class="tab-content sj_speech")
+    include ./components/second/zjsj/speech.pug
+
+  div(class="tab-content sj_culture")
+    include ./components/second/zjsj/culture.pug
+
+  div(class="tab-content sj_event")
+    include ./components/second/zjsj/event.pug
+
+  div(class="tab-content sj_strategy")
+    include ./components/second/zjsj/strategy.pug
+    
+  div(class="tab-content sj_team")
+    include ./components/second/zjsj/team.pug

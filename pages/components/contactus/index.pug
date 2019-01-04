@@ -1,0 +1,89 @@
+//- contact us
+-
+  var path = require('path')
+
+  function loadImg(str) {
+    return path.join(__dirname, 'assets/imgs/other/' + str)
+  }
+
+  var contactus = {
+    cn_name: '联系我们',
+    en_name: 'CONTACT US',
+    img: loadImg('second/contactus-tag.png'),
+    company: {
+      img: loadImg('second/conatctus-logo.png'),
+      alt: 'logo',
+      name: '圣捷集团'
+    },
+    list: [
+      {
+        img: loadImg('second/contactus-circle-01.png'),
+        text: '圣捷集团一直致力于为高净值客户提供全球化多视角的财富管理、生活健康管理服务。服务领域涵盖财富管理、健康管理、品质消费等。'
+      },
+      {
+        img: loadImg('second/contactus-circle-01.png'),
+        text: '联系方式：400-075-2006'
+      },
+      {
+        img: loadImg('second/sj-location.png'),
+        text: '北京·高碑店西店村义安门46号楼110'
+      },
+      {
+        img: loadImg('second/contactus-circle-02.png'),
+        text: '邮政编码：100000'
+      }
+    ],
+    qr_list: [
+      {
+        img: loadImg('second/contactus-qr-sj.png'),
+        alt: '公众号',
+        name: '圣捷投资',
+        qname: '官方公众号'
+      },
+      {
+        img: loadImg('second/contactus-qr-xkd.png'),
+        alt: '公众号',
+        name: '信可智投',
+        qname: '官方公众号'
+      },
+      {
+        img: loadImg('second/contactus-qr-ys.png'),
+        alt: '公众号',
+        name: '御膳私厨',
+        qname: '官方公众号'
+      },
+      {
+        img: loadImg('second/contactus-qr-sr.jpg'),
+        alt: '公众号',
+        name: '诗冉',
+        qname: '官方公众号'
+      }
+    ]
+  }
+
+include ../commons/title/second-title.pug
+
+div(class="sj_contact_us")
+  +second-title(contactus.cn_name, contactus.en_name)
+  div(class="sj_wrapper clearfix")
+    //- tag
+    img(class="sj_tag" src=contactus.img)
+    div(class="sj_left")
+      div(class="sj_ct_logo")
+        img(src=contactus.company.img alt=contactus.company.alt)
+        span= contactus.company.name
+      
+      ul(class="sj_ct_list")
+       each item in contactus.list && contactus.list.length ? contactus.list : []
+        li(class="sj_ct_item")
+          img(src=item.img)
+          span= item.text
+    
+    div(class="sj_right")
+      ul(class="sj_qr_list clearfix")
+        each item in contactus.qr_list && contactus.qr_list.length ? contactus.qr_list : []
+          li(class="sj_qr_item")
+            img(src=item.img alt=item.alt)
+            div(class="sj_qr_des")
+              span= item.name
+              span= item.qname

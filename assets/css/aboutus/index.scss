@@ -1,0 +1,66 @@
+@import './aboutus-sprite.scss';
+
+.about-list {
+  display: flex;
+  align-content: space-around;
+  width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-item {
+  padding: 16px;
+  flex-grow: 1;
+}
+
+.about-item .icon {
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.about-item .desc {
+  padding: 20px 8px;
+  text-align: center;
+}
+
+.about-item:nth-of-type(1) .icon {
+  @include sprite($product-us_01);
+}
+.about-item:nth-of-type(1) .icon:hover {
+  @include sprite($product-us_07);
+}
+
+.about-item:nth-of-type(2) .icon {
+  @include sprite($product-us_02);
+}
+.about-item:nth-of-type(2) .icon:hover {
+  @include sprite($product-us_08);
+}
+
+.about-item:nth-of-type(3) .icon {
+  @include sprite($product-us_03);
+}
+.about-item:nth-of-type(3) .icon:hover {
+  @include sprite($product-us_09);
+}
+
+.about-item:nth-of-type(4) .icon {
+  @include sprite($product-us_04);
+}
+.about-item:nth-of-type(4) .icon:hover {
+  @include sprite($product-us_10);
+}
+
+.about-item:nth-of-type(5) .icon {
+  @include sprite($product-us_05);
+}
+.about-item:nth-of-type(5) .icon:hover {
+  @include sprite($product-us_11);
+}
+
+.about-item:nth-of-type(6) .icon {
+  @include sprite($product-us_06);
+}
+.about-item:nth-of-type(6) .icon:hover {
+  @include sprite($product-us_12);
+}

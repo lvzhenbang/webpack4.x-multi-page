@@ -1,0 +1,43 @@
+extends ./template.pug
+
+block banners
+  include ./components/commons/banner/index.pug
+
+block contents
+
+  include ./components/commons/title/block-title.pug
+  include ./components/commons/tab/index.pug
+
+  -
+    var sxy = {
+      cn_name: '圣捷商学院',
+      en_name: 'SHENGJIE BUSINESS SCHOOL',
+      tabs: [
+        {
+          cn_name: '圣捷商学院',
+          en_name: 'SHENGJIE BUSINESS SCHOOL',
+          type: 'school'
+        }, {
+          cn_name: '商学院名人',
+          en_name: 'BUSINESS SCHOOL CELEBRITIES',
+          type: 'celebrites'
+        }, {
+          cn_name: '商学院课堂',
+          en_name: 'BUSINESS SCHOOL CLASSROOM',
+          type: 'classroom'
+        }
+      ]
+    }
+  
+  +block-title(sxy.cn_name, sxy.en_name)
+
+  +tab(sxy.tabs)
+    
+  div(class="tab-content sj_sxy sj_school show")
+    include ./components/second/sxy/school.pug
+
+  div(class="tab-content sj_sxy sj_celebrites")
+    include ./components/second/sxy/celebrites.pug
+
+  div(class="tab-content sj_sxy sj_classroom")
+    include ./components/second/sxy/classroom.pug

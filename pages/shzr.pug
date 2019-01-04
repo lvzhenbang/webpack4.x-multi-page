@@ -1,0 +1,43 @@
+extends ./template.pug
+
+block banners
+  include ./components/commons/banner/index.pug
+
+block contents
+
+  include ./components/commons/title/block-title.pug
+  include ./components/commons/tab/index.pug
+
+  -
+    var shzr = {
+      cn_name: '社会责任',
+      en_name: 'SOCIAL RESPONSIBILITY',
+      tabs: [
+        {
+          cn_name: '责任体系',
+          en_name: 'RESPONSIBILITY SYSTEM',
+          type: 'system'
+        }, {
+          cn_name: '社会公益',
+          en_name: 'SOCIAL WELFARE',
+          type: 'welfare'
+        }, {
+          cn_name: '光彩事业',
+          en_name: 'GLORIOUS CAREER',
+          type: 'career'
+        }
+      ]
+    }
+  
+  +block-title(shzr.cn_name, shzr.en_name)
+
+  +tab(shzr.tabs)
+    
+  div(class="tab-content sj_shzr sj_system show")
+    include ./components/second/shzr/system.pug
+
+  div(class="tab-content sj_shzr sj_welfare")
+    include ./components/second/shzr/welfare.pug
+
+  div(class="tab-content sj_shzr sj_career")
+    include ./components/second/shzr/career.pug

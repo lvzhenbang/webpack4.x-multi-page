@@ -1,0 +1,29 @@
+<!-- info -->
+div(class="sj_info")
+  div(class="sj_wrapper")
+    div(class="sj_date_key") 工作时间：
+    div(class="sj_date_value") 9:00-18:00 周一至周五
+
+- var nav = require('../../../utils/nav')
+
+//- nav
+div(class="sj_nav")
+  div(class="sj_wrapper")
+    div(class="sj_logo")
+      a(href="/")
+        img(src=require('path').join(__dirname, 'assets/imgs/other/logo.png') alt="圣捷投资")
+    ul(class="sj_navbar")
+      each item in nav ? nav : []
+        li
+          a(href=item.href)= item.text
+
+//- fixed nav
+div(class="sj_nav sj_nav_fixed")
+  div(class="sj_wrapper")
+    div(class="sj_logo")
+      a(href="/")
+        img(src=require('path').join(__dirname, 'assets/imgs/other/logo.png') alt="圣捷投资")
+    ul(class="sj_navbar")
+      each item in nav ? nav : []
+        li
+          a(href=item.href)= item.text

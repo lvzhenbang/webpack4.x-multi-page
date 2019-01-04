@@ -1,0 +1,22 @@
+@import "./utils/normalize.scss";
+@import "./utils/inital.scss";
+
+@font-face {
+  font-family: Adobe;
+  src: url('../fonts/AdobeKaitiStd-Regular.otf');
+}
+
+@font-face {
+  font-family: GB;
+  src: url('../fonts/kt-GB2312.ttf');
+}
+
+a {
+  text-decoration: none;
+}
+
+.container,
+.sj_wrapper {
+  width: 1226px;
+  margin: 0 auto;
+}
