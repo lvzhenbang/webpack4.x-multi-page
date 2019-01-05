@@ -1,26 +1,4 @@
-- var school = require('./sxy.js').school
-
-each item in school && school.length ? school : []
-  if item.title !== ''
-    ul
-      li(class="sj_yw_item")
-        div(class="sj_i_one")= item.title
-        div(class="sj_i_two")
-          each citem in item.content && item.content.length ? item.content : []
-            if citem.type === 'text'
-              p= citem.text
-            else if citem.type === 'img'
-              img(src=citem.src width=citem.width height=citem.height)
-            else if citem.type === 'card'
-              div(class="sj_card")
-                img(src=citem.left.src alt=citem.left.alt)
-                div(class="sj_t_desc")
-                  p(class="sj_team_name")= citem.right.name
-                  each ptext in citem.right.list && citem.right.list.length ? citem.right.list : []
-                    p= ptext.text
-              
-           
-  else
+mixin block-item(item)
     each citem in item.content && item.content.length ? item.content : []
       if citem.type === 'text'
         p= citem.text
@@ -44,3 +22,23 @@ each item in school && school.length ? school : []
             p(class="sj_team_name")= citem.right.name
             each ptext in citem.right.list && citem.right.list.length ? citem.right.list : []
               p= ptext.text
+      else if citem.type === 'link'
+        div(class="sj_link")
+          span= citem.link.name
+          a(href=citem.link.href)= citem.link.href
+      else if citem.type === 'd-title'
+        div(class="sj_dtitle")
+          span= citem.title.text
+          span= citem.title.subtext
+
+
+mixin block-template(content)
+  each item in content && content.length ? content : []
+    if item.title !== ''
+      div
+        div(class="sj_block_item")
+          div(class="sj_i_one")= item.title
+          div(class="sj_i_two")
+            +block-item(item)
+    else
+      +block-item(item)

@@ -16,3 +16,20 @@
   color: #1053c4;
   text-align: center;
 }
+
+.sj_dtitle {
+  margin: 60px 0;
+  list-style: none;
+}
+
+.sj_dtitle span {
+  display: block;
+  margin-top: 20px;
+  font-size: 22px;
+  color: #666666;
+  text-align: center;
+}
+
+.sj_dtitle span:nth-of-type(1) {
+  color: #1053c4;
+}
