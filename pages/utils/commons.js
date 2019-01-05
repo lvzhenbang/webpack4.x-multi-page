@@ -72,7 +72,6 @@ function mapShow() {
 
 
 // banner
-
 var carousel = require('./carousel')
 
 $('#banner>.carousel').Carousel({
@@ -81,7 +80,3 @@ $('#banner>.carousel').Carousel({
   time: 3000,
   indicators: true
 })
-
-// tabs
-
-require('./tabs.js')

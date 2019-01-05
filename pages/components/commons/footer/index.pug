@@ -6,11 +6,11 @@ div(class="sj_footer")
       ul(class="sj_map_nav clearfix")
         each item in map
           li(class="sj_map_item")
-            a(href=item.href? item.href : 'javascript:;' class="sj_title")= item.text
+            a(href=item.href ? (item.type ? item.href + '#' + item.type : item.href) : 'javascript:;' class="sj_title" )= item.text
             ul(class="sj_map_menu")
               each subItem in item.subMap ? item.subMap : []
                 li
-                  a(href=subItem.href)= subItem.text
+                  a(href=subItem.href ? (subItem.type ? subItem.href + '#' + subItem.type : subItem.href) : 'javascript:;')= subItem.text
 
       //- user service
       div(class="sj_user_service")

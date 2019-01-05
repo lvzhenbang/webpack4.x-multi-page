@@ -40,7 +40,8 @@
   cursor: pointer;
 }
 
-.tab-item.active {
+.tab-item.active,
+.tab-item:hover {
   color: #f5533d;
 }
 
