@@ -1,0 +1,58 @@
+.tab-box {
+  position: relative;
+  margin-top: 30px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.line {
+  width: 0px;
+  height: 5px;
+  background: #f5533d;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  z-index: 1;
+}
+
+.tabs {
+  display:flex;
+  width: 100%;
+  justify-content: space-between
+}
+
+.tab-item {
+  padding: 8px 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tab-item.active,
+.tab-item:hover {
+  color: #f5533d;
+}
+
+.tab-content {
+  position: relative;
+  display: none;
+  width: 100%;
+  padding: 10px;
+}
+
+.show {
+  display: block;
+  -webkit-animation: move .4s linear forwards;
+  animation: move .4s linear forwards;
+}
+
+@keyframes move {
+  from {
+      top: 50px;
+      opacity: 0
+  }
+
+  to {
+      top: 0px;
+      opacity: 1
+  }
+}

@@ -1,14 +1,15 @@
-@import "./utils/normalize.scss";
-@import "./utils/inital.scss";
+@import "@css/utils/normalize.scss";
+@import "@css/utils/inital.scss";
+@import "@css/path.scss";
 
 @font-face {
   font-family: Adobe;
-  src: url('../fonts/AdobeKaitiStd-Regular.otf');
+  src: url('#{$font-path}/kt-GB2312.ttf');
 }
 
 @font-face {
   font-family: GB;
-  src: url('../fonts/kt-GB2312.ttf');
+  src: url('#{$font-path}/kt-GB2312.ttf');
 }
 
 a {

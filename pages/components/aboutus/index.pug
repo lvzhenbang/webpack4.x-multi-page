@@ -1,10 +1,11 @@
 //- 关于我们
+- var aboutus = require('@data/aboutus')
 include ../commons/title/index-title.pug
 
 div(class="about-us")
-  +index-title('关于我们', 'ABOUT US')
+  +index-title(aboutus.cn_name, aboutus.en_name)
   div(class="about-list")
-    each desc in ['互联网金融', '全品类金融', '商业地产', '餐饮', '文化', '大健康']
+    each desc in aboutus.list && aboutus.list.length ? aboutus.list : []
       div(class="about-item")
         div(class="icon")
         div(class="desc")= desc

@@ -1,38 +1,35 @@
 // commons
-require('../../assets/css/index.scss')
-require('../../assets/css/commons/header/index.scss')
-require('../../assets/css/commons/container/index.scss')
-require('../../assets/css/commons/footer/index.scss')
-require('../../assets/css/commons/map/index.scss')
-require('../../assets/css/commons/backtop/index.scss')
-require('../../assets/css/banner/index.scss')
+require('@css/index.scss')
+require('@css/commons/header.scss')
+require('@css/commons/footer.scss')
+require('@css/commons/title.scss')
+require('@css/commons/map.scss')
+require('@css/commons/backtop.scss')
+require('@css/commons/banner.scss')
 
 // index
-require('../../assets/css/commons/title/index-title.scss')
-require('../../assets/css/product/index.scss')
-require('../../assets/css/partner/index.scss')
-require('../../assets/css/aboutus/index.scss')
+require('@css/product/index.scss')
+require('@css/partner/index.scss')
+require('@css/aboutus/index.scss')
 
 // second
-require('../../assets/css/commons/title/second-title.scss')
-require('../../assets/css/commons/title/block-title.scss')
-require('../../assets/css/commons/tabs/index.scss')
-require('../../assets/css/second/index.scss')
+require('@css/commons/tabs.scss')
+require('@css/second/index.scss')
 
 // second zjsj/ywbk/sxy
-require('../../assets/css/second/zjsj.scss')
-require('../../assets/css/second/ywbk.scss')
-require('../../assets/css/second/sxy.scss')
+require('@css/second/zjsj.scss')
+require('@css/second/ywbk.scss')
+require('@css/second/sxy.scss')
 
 
 // styleus
-require('../../assets/css/styleus/index.scss')
+require('@css/styleus/index.scss')
 
 // contact us
-require('../../assets/css/contactus/index.scss')
+require('@css/contactus/index.scss')
 
 // recruitment
-require('../../assets/css/recruitment/index.scss')
+require('@css/recruitment/index.scss')
 
 // news center
-require('../../assets/css/newscenter/index.scss')
+require('@css/newscenter/index.scss')

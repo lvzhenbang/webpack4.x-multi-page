@@ -1,6 +1,6 @@
 const path = require('path')
-let navs = require('./pages/utils/nav')
-const subnavs = require('./pages/utils/subnav')
+let navs = require('./pages/data/nav')
+const subnavs = require('./pages/data/subnav')
 
 navs = navs.concat(subnavs)
 

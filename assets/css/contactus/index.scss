@@ -1,20 +1,23 @@
-.sj_contact_us {
+
+@import "@css/path.scss";
+
+.sj_contactus {
   width: 100%;
   min-height: 759px;
-  background: url('../../imgs/other/second/contactus-bg.jpg') no-repeat;
+  background: url('#{$img-other}/second/contactus-bg.jpg') no-repeat;
   background-position: center top;
 }
 
-.sj_contact_us .sj_wrapper {
+.sj_contactus .sj_wrapper {
   position: relative;
   background: #eee;
 }
 
-.sj_contact_us .sj_second-title span:nth-of-type(1) {
+.sj_contactus .sj_second-title span:nth-of-type(1) {
   color: #fff;
 }
 
-.sj_contact_us .sj_second-title span:nth-last-of-type(1) {
+.sj_contactus .sj_second-title span:nth-last-of-type(1) {
   color: #a7a7a7;
 }
 
@@ -26,14 +29,14 @@
   height: 36px;
 }
 
-.sj_contact_us .sj_left,
-.sj_contact_us .sj_right {
+.sj_contactus .sj_left,
+.sj_contactus .sj_right {
   float: left;
   width: 50%;
 }
 
-.sj_contact_us .sj_left {
-  background: url(../../imgs/other/second/sj_dot.png) right top repeat-y;
+.sj_contactus .sj_left {
+  background: url('#{$img-other}/second/sj_dot.png') right top repeat-y;
   padding: 60px 80px;
 }
 

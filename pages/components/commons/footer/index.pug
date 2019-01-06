@@ -1,13 +1,13 @@
-- var map = require('./map')
+- var map = require('@data/site-nav')
 //- footer
 div(class="sj_footer")
   div(class="sj_wrapper")
-    div(class="sj_map_box clearfix")
-      ul(class="sj_map_nav clearfix")
+    div(class="sj_map-box clearfix")
+      ul(class="sj_map-nav clearfix")
         each item in map
-          li(class="sj_map_item")
+          li(class="sj_map-item")
             a(href=item.href ? (item.type ? item.href + '#' + item.type : item.href) : 'javascript:;' class="sj_title" )= item.text
-            ul(class="sj_map_menu")
+            ul(class="sj_map-menu")
               each subItem in item.subMap ? item.subMap : []
                 li
                   a(href=subItem.href ? (subItem.type ? subItem.href + '#' + subItem.type : subItem.href) : 'javascript:;')= subItem.text

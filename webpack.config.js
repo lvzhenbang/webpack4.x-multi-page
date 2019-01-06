@@ -1,7 +1,6 @@
 'use strict';
 
 const path = require('path');
-const HtmlWebapckPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
@@ -49,6 +48,16 @@ module.exports = (mode) => {
     externals: {
       jquery: 'jQuery',
       BMap: 'BMap'
+    },
+    resolve: {
+      alias: {
+        '@': path.join(__dirname, '..', 'pages/'),
+        '@css': path.join(__dirname, 'assets/css/'),
+        '@img': path.join(__dirname, 'assets/imgs/'),
+        // '@font': path.join(__dirname, 'assets/fonts/'),
+        '@data': path.join(__dirname, 'pages/data/'),
+        '@utils': path.join(__dirname, 'pages/utils/')
+      }
     },
     module: {
       rules: [
