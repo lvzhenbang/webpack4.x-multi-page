@@ -2,15 +2,25 @@
 .sj_partner {}
 
 .sj_partner-list {
-  width: 1280px;
-  padding: 0;
-  margin: 0 -27px;
+  display: flex;
+}
+
+@media(min-width: 992px) {
+  .sj_partner-list {
+    flex-flow: row wrap;
+    align-content: space-between;
+  }
+}
+
+@media(max-width: 576px) {
+  .sj_partner-list {
+    flex-direction: column;
+  }
 }
 
 .sj_partner-item {
-  float: left;
   list-style: none;
-  padding: 24px 16px;
+  padding: 24px 0;
 }
 
 .sj_partner-item img {

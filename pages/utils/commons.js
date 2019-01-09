@@ -5,11 +5,11 @@ window.addEventListener('scroll', function() {
 })
 
 function navShow() {
-  if (!$('.sj_nav_fixed').hasClass('sj_nav_show') && window.pageYOffset >= 85) {
-    $('.sj_nav_fixed').addClass('sj_nav_show');
+  if (!$('.sj_nav-fixed').hasClass('sj_nav-show') && window.pageYOffset >= 85) {
+    $('.sj_nav-fixed').addClass('sj_nav-show');
   }
-  if ($('.sj_nav_fixed').hasClass('sj_nav_show') && window.pageYOffset < 85) {
-    $('.sj_nav_fixed').removeClass('sj_nav_show');
+  if ($('.sj_nav-fixed').hasClass('sj_nav-show') && window.pageYOffset < 85) {
+    $('.sj_nav-fixed').removeClass('sj_nav-show');
   }
 }
 

@@ -3,9 +3,21 @@
 .about-list {
   display: flex;
   align-content: space-around;
-  width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
+}
+
+@media(min-width: 992px) {
+  .about-list {
+    flex-flow: row nowrap;
+    width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media(max-width: 576px) {
+  .about-list {
+    flex-direction: column 
+  }
 }
 
 .about-item {

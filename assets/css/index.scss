@@ -16,8 +16,21 @@ a {
   text-decoration: none;
 }
 
-.container,
-.sj_wrapper {
-  width: 1226px;
-  margin: 0 auto;
+
+@media(min-width: 992px) {
+  .container,
+  .sj_wrapper {
+    width: 1226px;
+    margin: 0 auto;
+  }
+}
+
+@media(max-width: 576px) {
+  .container,
+  .sj_wrapper {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+  }
 }

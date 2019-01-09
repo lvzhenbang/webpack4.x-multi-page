@@ -11,6 +11,7 @@
 .sj_contactus .sj_wrapper {
   position: relative;
   background: #eee;
+  display: flex;
 }
 
 .sj_contactus .sj_second-title span:nth-of-type(1) {
@@ -29,40 +30,32 @@
   height: 36px;
 }
 
-.sj_contactus .sj_left,
-.sj_contactus .sj_right {
-  float: left;
-  width: 50%;
-}
-
 .sj_contactus .sj_left {
-  background: url('#{$img-other}/second/sj_dot.png') right top repeat-y;
   padding: 60px 80px;
 }
 
-.sj_ct_logo img,
-.sj_ct_logo span {
+.sj_ct-logo img,
+.sj_ct-logo span {
   display: inline-block;
   vertical-align: middle;
 }
 
-.sj_ct_logo img {
+.sj_ct-logo img {
   width: 124px;
   height: 124px;
 }
 
-.sj_ct_logo span {
-  margin-left: 32px;
+.sj_ct-logo span {
   font-size: 24px;
   color: #666;
 }
 
-.sj_ct_list,
-.sj_qr_list {
+.sj_ct-list,
+.sj_qr-list {
   padding-left: 0;
 }
 
-.sj_ct_item {
+.sj_ct-item {
   position: relative;
   list-style: none;
   padding-left: 24px;
@@ -71,7 +64,7 @@
   color: #666;
 }
 
-.sj_ct_item img {
+.sj_ct-item img {
   position: absolute;
   top: 5px;
   left: 0;
@@ -79,29 +72,73 @@
   height: 13px;
 }
 
-.sj_qr_list {
-  margin: 156px 0;
+.sj_qr-list {
+  display: flex;
+  align-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+  width: 100%;
+  height: 100%;
   font-size: 18px;
   color: #666;
 }
 
-.sj_qr_item {
+.sj_qr-item {
+  flex-grow: 1;
   list-style: none;
-  float: left;
-  margin: 0 20px;
   text-align: center;
 }
 
-.sj_qr_item img {
+.sj_qr-item img {
   width: 112px;
   height: 112px;
 }
 
 
-.sj_qr_item .sj_qr_des {
+.sj_qr-item .sj_qr_des {
   margin-top: 16px;
 }
 
-.sj_qr_item span {
+.sj_qr-item span {
   display: block;
+}
+
+
+@media(min-width: 992px) {
+  .sj_contactus .sj_wrapper {
+    flex-flow: row nowrap;
+  }
+
+  .sj_contactus .sj_left,
+  .sj_contactus .sj_right {
+    width: 50%;
+  }
+
+  .sj_contactus .sj_left {
+    background: url('#{$img-other}/second/sj_dot.png') right top repeat-y;
+  }
+
+  .sj_ct-logo span { 
+    margin-left: 32px;
+  }
+}
+
+@media(max-width: 991px) {
+  .sj_contactus .sj_wrapper {
+    flex-direction: column;
+  }
+
+  .sj_contactus .sj_left,
+  .sj_contactus .sj_right {
+    width: 100%;
+  }
+
+  .sj_ct-logo {
+    text-align: center;
+  }
+
+  .sj_ct-logo span { 
+    display: block;
+    padding: 18px 0;
+  }
 }

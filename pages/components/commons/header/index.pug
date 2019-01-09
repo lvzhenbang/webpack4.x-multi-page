@@ -12,10 +12,11 @@ mixin nav(nav)
       a(href="/")
         img(src=loadImg('logo.png') alt='圣捷集团')
     div(class="sj_navbar")
-      ul(class="sj_navbar-box")
-        each item in nav ? nav : []
-          li
-            a(href=item.href)= item.text
+      div(class="sj_navbar-container")
+        ul(class="sj_navbar-box")
+          each item in nav ? nav : []
+            li
+              a(href=item.href)= item.text
 
 - var nav = require('@data/nav')
 
@@ -24,5 +25,5 @@ div(class="sj_nav")
   +nav(nav)
 
 //- fixed nav
-div(class="sj_nav sj_nav_fixed")
+div(class="sj_nav sj_nav-fixed")
   +nav(nav)

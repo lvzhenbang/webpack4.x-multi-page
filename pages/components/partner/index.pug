@@ -7,7 +7,7 @@ div(class="sj_partner")
 
   +index-title(partner.cn_name, partner.en_name)
 
-  ul(class="sj_partner-list clearfix")
+  ul(class="sj_partner-list")
     each item in partner.list && partner.list.length ? partner.list : []
       div(class="sj_partner-item")
         img(src=item.img alt=item.alt)

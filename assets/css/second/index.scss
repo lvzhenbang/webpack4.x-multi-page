@@ -8,3 +8,10 @@
 .tab-content p {
   text-indent: 2em;
 }
+
+@media(max-width: 991px) {
+  .tab-content img {
+    width: 100%;
+    height: auto;
+  }
+}

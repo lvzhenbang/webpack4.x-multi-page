@@ -1,5 +1,18 @@
 #map {
   width: 100%;
-  height: 300px;
-  margin-top: 80px;
+}
+
+@media(min-width: 992px) {
+  #map {
+    padding-top: 24.5%;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media(max-width: 576px) {
+  #map {
+    padding-top: 36%;
+  }
 }

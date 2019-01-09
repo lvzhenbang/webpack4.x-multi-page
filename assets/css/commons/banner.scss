@@ -2,6 +2,21 @@
 
 #banner {
   width: 100%;
-  min-width: 1226px;
-  height: 466px;
+}
+
+@media(min-width: 992px) {
+  #banner {
+    min-width: 1226px;
+    height: 466px;
+  }
+}
+
+@media(max-width: 576px) {
+  #banner .carousel {
+    padding-top: 38%;
+  }
+
+  .carousel-btn {
+    display: none;
+  }
 }

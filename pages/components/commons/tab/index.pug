@@ -1,8 +1,9 @@
 mixin tab(tabs)
-  div(class="tab-box")
-    div(class="line")
-    div(class="tabs")
-      each item, index in tabs && tabs.length ? tabs : []
-        div(class="tab-item" class= index===0 ? 'active' : '' data-type=item.type)
-          div= item.cn_name
-          div= item.en_name
+  div(class="sj_tabs")
+    div(class="sj_tabs-container")
+      div(class="line")
+      div(class="tabs")
+        each item, index in tabs && tabs.length ? tabs : []
+          div(class="tab-item" class= index===0 ? 'active' : '' data-type=item.type)
+            div= item.cn_name
+            div= item.en_name

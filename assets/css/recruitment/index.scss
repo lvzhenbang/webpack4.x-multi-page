@@ -1,10 +1,18 @@
 .sj_recruitment {
   width: 100%;
   height: auto;
-  min-height: 594px;
-  padding-top: 1px;
+  padding-top: 48%;
   background: url(../../imgs/other/recruit/sj-banner.jpg) no-repeat;
   background-position: center top;
+}
+
+@media(min-width: 992px) {
+  .sj_recruitment {
+  }
+
+  .sj_recruitment .sj_wrapper {
+    margin-top: -8%;
+  }
 }
 
 .sj_recruitment .sj_second-title span:nth-of-type(1) {
@@ -12,7 +20,6 @@
 }
 
 .sj_recruitment .sj_wrapper {
-  margin-top: 520px;
   background: #fff;
 }
 

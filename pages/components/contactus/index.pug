@@ -5,25 +5,25 @@ include ../commons/title/second-title.pug
 
 div(class="sj_contactus")
   +second-title(contactus.cn_name, contactus.en_name)
-  div(class="sj_wrapper clearfix")
+  div(class="sj_wrapper")
     //- tag
     img(class="sj_tag" src=contactus.img)
     div(class="sj_left")
-      div(class="sj_ct_logo")
+      div(class="sj_ct-logo")
         img(src=contactus.company.img alt=contactus.company.alt)
         span= contactus.company.name
       
-      ul(class="sj_ct_list")
+      ul(class="sj_ct-list")
        each item in contactus.list && contactus.list.length ? contactus.list : []
-        li(class="sj_ct_item")
+        li(class="sj_ct-item")
           img(src=item.img)
           span= item.text
     
     div(class="sj_right")
-      ul(class="sj_qr_list clearfix")
+      ul(class="sj_qr-list")
         each item in contactus.qr_list && contactus.qr_list.length ? contactus.qr_list : []
-          li(class="sj_qr_item")
+          li(class="sj_qr-item")
             img(src=item.img alt=item.alt)
-            div(class="sj_qr_des")
+            div(class="sj_qr-des")
               span= item.name
               span= item.qname
