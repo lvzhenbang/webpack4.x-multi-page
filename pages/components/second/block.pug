@@ -18,8 +18,8 @@ mixin block-item(item)
       else if citem.type === 'card'
         div(class="sj_card")
           img(src=citem.left.src alt=citem.left.alt)
-          div(class="sj_t_desc")
-            p(class="sj_team_name")= citem.right.name
+          div(class="sj_team-desc")
+            p(class="sj_team-name")= citem.right.name
             each ptext in citem.right.list && citem.right.list.length ? citem.right.list : []
               p= ptext.text
       else if citem.type === 'link'
@@ -37,8 +37,8 @@ mixin block-template(content)
     if item.title !== ''
       div
         div(class="sj_block_item")
-          div(class="sj_i_one")= item.title
-          div(class="sj_i_two")
+          div(class="sj_i-one")= item.title
+          div(class="sj_i-two")
             +block-item(item)
     else
       +block-item(item)

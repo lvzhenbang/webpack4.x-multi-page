@@ -2,8 +2,6 @@
 .sj_news-center {
   width: 100%;
   height: auto;
-  min-height: 594px;
-  padding-bottom: 86px;
   background: url(../../imgs/other/second/sj_news-bg.jpg) no-repeat;
   background-position: center top;
 }
@@ -52,24 +50,27 @@
   transform: scale(0)
 }
 
-.sj_news-center a {
+.sj_new-item>a,
+.sj_new-item>.sj_new-content {
+  width: 50%;
+}
+
+.sj_new-item>a {
   display: block;
   text-decoration: none;
   cursor: pointer;
+  background: red;
+  display: flex;
+  align-items: center;
 }
 
 .sj_news-center .sj_new-item img {
-  width: 594px;
-  height: 276px;
+  width: 100%;
   cursor: pointer;
 }
 
 .sj_news-center .sj_new-item .sj_new-content {
-  width: 600px;
-  height: 276px;
-  padding: 50px 90px;
-  vertical-align: middle;
-  
+  padding: 0 2em;
   position: relative;
   border-left: 3px solid red;
 }
@@ -91,10 +92,14 @@
   flex-direction: row-reverse;
 }
 
-.sj_news-center .sj_new-item.reverse .sj_new-content {
+.sj_new-item.reverse .sj_new-content {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   border-right: 4px solid red;
-  border-left: 20px solid transparent;
+  border-left: 4px solid transparent;
 }
 
 .sj_news-center .sj_new-item.reverse .sj_new-content::after {
@@ -137,6 +142,47 @@
 }
 
 .sj_news-center .sj_new-item .sj_new-desc {
+  height: 4em;
+  overflow: hidden;
   font-size: 14px;
   color: #676767;
+}
+
+
+@media(min-width: 992px) {
+  .sj_news-center {
+    min-height: 594px;
+    padding-bottom: 86px;
+  }
+}
+
+@media(max-width: 576px) {
+  .sj_news-center .sj_new-item .sj_new-content {
+    border: none;
+  }
+
+  .sj_news-center .sj_new-item,
+  .sj_news-center .sj_new-item.reverse {
+    flex-direction: column;
+  }
+
+  .sj_news-center .sj_new-item {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .sj_news-center .sj_new-item>a,
+  .sj_news-center .sj_new-item>.sj_new-content {
+    width: 100%;
+  }
+
+  .sj_news-center .sj_new-item>.sj_new-content {
+    padding: 16px 0;
+  }
+
+  .sj_news-center .sj_new-item .sj_new-content::after,
+  .sj_news-center .sj_new-item.reverse .sj_new-content::after {
+    display: none;
+  }
 }
