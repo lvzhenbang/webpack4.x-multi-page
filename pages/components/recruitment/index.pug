@@ -9,7 +9,7 @@ div(class="sj_recruitment")
     +second-title(recruitment.cn_name, recruitment.en_name)
 
     div(class="sj_table")
-      div(class="sj_table-header clearfix")
+      div(class="sj_table-header")
         each item in recruitment.thead && recruitment.thead.length ? recruitment.thead : []
           div(class="sj_table-th")
             span= item.cn_name
@@ -18,7 +18,7 @@ div(class="sj_recruitment")
       div(class="sj_table-body")
         each item, index in recruitment.data && recruitment.data ? recruitment.data : []
           div(class="sj_table-tr")
-            div(class="sj-table-tt clearfix")
+            div(class="sj-table-tt")
               div(class="sj_table-td")= item.position
               div(class="sj_table-td")= item.num
               div(class="sj_table-td")= item.address

@@ -33,11 +33,12 @@ a {
 
 .sj_arrow-more {
   position: relative;
+  top: 0.5em;
 }
 
 .sj_arrow-more span {
   position: absolute;
-  top: 0.5em;
+  top: 0;
   right: 1em;
   display: inline-block;
   width: 18px;
