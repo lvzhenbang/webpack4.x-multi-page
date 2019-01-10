@@ -57,3 +57,5 @@ v0.5 实现对图片的优化处理 && 给URL添加hash，实现对页面的动�
 v0.6 提取整理所有的mock Data && 使用webpack的`resolve.alias`实现对路径的优化
 
 参考文章：[构建多页面应用——优化（二）](https://github.com/lvzhenbang/webpack-learning/tree/master/doc/two/multi-page-mockdata.md)
+
+v0.7 实现web的响应式功能
