@@ -1,25 +1,4 @@
--
-  var path = require('path')
-  function loadImg(str) {
-    return path.join(__dirname, 'assets/imgs/other/' + str)
-  }
-  var banner = [
-    {
-      href: './styleus.html',
-      img: loadImg('index/banner-1.jpg'),
-      title: '企业风采'
-    },
-    {
-      href: 'jvascrtip:;',
-      img: loadImg('index/banner-2.jpg'),
-      title: ''
-    },
-    {
-      href: 'javascript:;',
-      img: loadImg('index/banner-3.jpg'),
-      title: ''
-    }
-  ]
+- var banner = require('@data/banner.js')
 
 div(id="banner")
   div(class="carousel")

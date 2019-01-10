@@ -112,6 +112,12 @@
   }
 }
 
+@media(max-width: 991px) {
+  .sj_product-list {
+    flex-flow: row wrap;
+  }
+}
+
 @media(max-width: 576px) {
   .sj_product-list {
     width: 100%;

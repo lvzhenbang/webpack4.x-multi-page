@@ -1,6 +1,9 @@
+const loadImg = require('@utils/load-img')
+
 module.exports = {
   cn_name: '人才招聘',
   en_name: 'RECRUITMENT',
+  img: loadImg('recruit/sj-banner.jpg'),
   thead: [
     {
       cn_name: '职位名称',
