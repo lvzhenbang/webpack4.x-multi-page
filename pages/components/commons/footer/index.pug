@@ -3,9 +3,10 @@
 div(class="sj_footer")
   div(class="sj_wrapper")
     div(class="sj_map-box clearfix")
-      ul(class="sj_map-nav clearfix")
+      ul(class="sj_map-nav")
         each item in map
-          li(class="sj_map-item")
+          li(class="sj_map-item sj_arrow-more")
+            span
             a(href=item.href ? (item.type ? item.href + '#' + item.type : item.href) : 'javascript:;' class="sj_title" )= item.text
             ul(class="sj_map-menu")
               each subItem in item.subMap ? item.subMap : []
