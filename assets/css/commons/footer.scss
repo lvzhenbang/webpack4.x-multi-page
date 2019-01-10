@@ -102,7 +102,7 @@
     margin-left: 40px;
   }
 
-  .sj_arrow-more span {
+  .sj_map-menu .sj_arrow-more span {
     display: none;
   }
 }
@@ -116,7 +116,7 @@
     text-align: center;
   }
 
-  .sj_arrow-more span {
+  .sj_map-menu .sj_arrow-more span {
     display: none;
   }
 }
@@ -136,16 +136,16 @@
     display: none;
   }
   
-  .sj_arrow-more span {
+  .sj_map-menu .sj_arrow-more span {
     display: block;
   }
 
-  .sj_arrow-more span:before {
+  .sj_map-menu .sj_arrow-more span:before {
     border-top: 2px solid #fff;
     border-right: 2px solid #fff;
   }
   
-  .sj_arrow-more span:after {
+  .sj_map-menu .sj_arrow-more span:after {
     background: #fff;
   }
 
