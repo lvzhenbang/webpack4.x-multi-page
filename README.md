@@ -59,3 +59,11 @@ v0.6 提取整理所有的mock Data && 使用webpack的`resolve.alias`实现对�
 参考文章：[构建多页面应用——优化（二）](https://github.com/lvzhenbang/webpack-learning/tree/master/doc/two/multi-page-mockdata.md)
 
 v0.7 实现web的响应式功能
+
+v0.7.1 
+
+* 修复构建耗时的问题（6-8S构建完成），减少一半多的时间
+* 整理构建启动文件到`./build/`目录，添加配置文件`./config/index.js`
+* 启用`source-map`，
+* 启用了`SplitChunksPlugin`，增加了`common`模块
+* 修复了`product`、`contactus`、`footer`的bug
