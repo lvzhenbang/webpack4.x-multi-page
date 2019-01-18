@@ -1,0 +1,1 @@
+{"version":3,"file":"assets/js/commons.55521e5d094ed3119881.js","sources":["webpack:///./pages/utils/set_nav.js"],"sourcesContent":["// 设置当前导航标记\r\n\r\nmodule.exports = function(num) {\r\n  $('.sj_navbar').each(function(index, item) {\r\n    $(item).find('li').eq(num).addClass('active')\r\n  })\r\n}"],"mappings":"AAEA","sourceRoot":""}

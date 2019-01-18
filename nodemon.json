@@ -1,0 +1,9 @@
+{
+  "verbose": true,
+  "watch": [
+    "module.config.js",
+    "multipage.config.js",
+    "webpack.config.js"
+  ],
+  "exec": "webpack-dev-server --env development"
+}

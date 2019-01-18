@@ -1,4 +1,4 @@
-! function (t) {
+(function (t) {
   function i(t, i) {
     this.init(t, i)
   }
@@ -98,4 +98,4 @@
       new i(t(this), n)
     })
   }
-}(jQuery);
+})(jQuery);

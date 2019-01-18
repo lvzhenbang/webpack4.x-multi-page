@@ -3,11 +3,11 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const multipage = require('./multipage.config')
+const multipage = require('./multipage.config.js');
+const Module = require('./module.config.js')
 
 let config = {
   devUrl: 'http://localhost:8080/',
@@ -33,17 +33,15 @@ module.exports = (mode) => {
     optimization: {
       splitChunks: {
         chunks: 'all',
-        maxInitialRequests: 20,
-        maxAsyncRequests: 20,
-        minSize: 40
-      },
-      minimizer: [
-        new UglifyJsPlugin({
-          cache: true,
-          parallel: true
-        }),
-        new OptimizeCSSAssetsPlugin({})
-      ]
+        cacheGroups: {
+          commons: {
+              name: 'commons',
+              minChunks: 2,
+              maxInitialRequests: 5,
+              minSize: 0
+          }
+        }
+      }
     },
     externals: {
       jquery: 'jQuery',
@@ -58,92 +56,16 @@ module.exports = (mode) => {
         '@data': path.join(__dirname, 'pages/data/'),
         '@utils': path.join(__dirname, 'pages/utils/')
       }
-    },
-    module: {
-      rules: [
-        {
-          include: path.resolve(__dirname, 'assets/css/'),
-          test: /\.scss$/,
-          use: [
-            MiniCssExtractPlugin.loader,
-            'css-loader',
-            'sass-loader'
-          ]
-        },
-        {
-          include: path.resolve(__dirname, 'pages/'),
-          test: /\.pug$/,
-          loader: 'pug-loader'
-        },
-        {
-          include: path.resolve(__dirname, 'assets/fonts/'),
-          test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-          use: [{
-            loader: 'url-loader',
-            options: {
-              limit: 10000,
-              name:  isDev ? '[name].[ext]' : '[name].[hash].[ext]',
-              outputPath: 'assets/fonts/'
-            }
-          }]
-        },
-        {
-          include: path.resolve(__dirname, 'assets/imgs/base64/'),
-          test: /\.(png|jpe?g)$/,
-          use: [{
-            loader: 'url-loader',
-            // options: {
-            //   limit: 30720 // 30kb
-            // }
-          }]
-        },
-        {
-          include: path.resolve(__dirname, 'assets/imgs/other/'),
-          test: /\.(png|jpe?g|gif)$/,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                name: isDev ? '[name].[ext]' : '[name].[hash].[ext]',
-                outputPath: 'assets/imgs/'
-              }
-            }, {
-              loader: 'image-webpack-loader',
-              options: {
-                bypassOnDebug: true,
-                mozjpeg: {
-                  progressive: true,
-                  quality: 65
-                },
-                optipng: {
-                  enabled: false,
-                },
-                pngquant: {
-                  quality: '65-90',
-                  speed: 4
-                },
-                gifsicle: {
-                  interlaced: false,
-                }
-              }
-            }
-          ]
-        }
-      ]
-    },
-    plugins: plugins.concat([
-      new MiniCssExtractPlugin({
-        filename: isDev ? 'assets/css/[name].css' : 'assets/css/[name].[contenthash].css',
-        chunkFilename: isDev ? 'assets/css/[id].css' : 'assets/css/[id].[contenthash].css'
-      }),
-      new CopyWebpackPlugin([
-        {
-          from: path.resolve(__dirname, 'assets/imgs/other/'),
-          to: path.resolve(__dirname, 'dist/assets/imgs/other/'),
-          ignore: ['.*']
-        }
-      ])
+    }, 
+    module: Module(isDev),
+    plugins: plugins.concat(
+      [
+        new MiniCssExtractPlugin({
+          filename: 'assets/css/[name].[contenthash].css',
+          chunkFilename: 'assets/css/[id].[contenthash].css'
+        }),
+        new OptimizeCSSAssetsPlugin({})
     ]),
-    devtool: 'source-map'
+    devtool: isDev ? 'cheap-module-eval-source-map' : 'cheap-module-source-map',
   }
 }

@@ -41,11 +41,11 @@ for(let sprite of sprites) {
       glob: '*.png'
     },
     target: {
-      image: path.resolve(__dirname, 'assets/imgs/other/' + sprite + '-sprite.png'),
+      image: path.resolve(__dirname, 'assets/imgs/other/sprites/' + sprite + '-sprite.png'),
       css: path.resolve(__dirname, 'assets/css/' + sprite + '/' + sprite + '-sprite.scss')
     },
     apiOptions: {
-      cssImageRef: '../../imgs/other/' + sprite + '-sprite.png'
+      cssImageRef: '../../imgs/other/sprites/' + sprite + '-sprite.png'
     }
   }))
 }

@@ -1,4 +1,3 @@
-// 设置当前导航标记
-$('.sj_navbar').each(function(index, item) {
-  $(item).find('li').eq(1).addClass('active')
-})
+var set_nav = require('@utils/set_nav.js')
+
+set_nav(1)

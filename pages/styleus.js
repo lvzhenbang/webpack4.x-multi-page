@@ -1,4 +1,3 @@
-var $ = require('jquery')
 
 $('.style-item').each(function (index, item) {
   var num = Math.floor(Math.random() * 255);

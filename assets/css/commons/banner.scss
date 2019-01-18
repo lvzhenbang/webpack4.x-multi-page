@@ -2,20 +2,14 @@
 
 #banner {
   width: 100%;
+  padding: 0;
 }
 
-@media(min-width: 992px) {
-  #banner {
-    min-width: 1226px;
-    height: 466px;
-  }
+#banner .carousel {
+  padding-top: 38%;
 }
 
 @media(max-width: 576px) {
-  #banner .carousel {
-    padding-top: 38%;
-  }
-
   .carousel-btn {
     display: none;
   }
