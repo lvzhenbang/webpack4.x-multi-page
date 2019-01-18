@@ -1,3 +1,7 @@
-var set_nav = require('@utils/set_nav.js')
+require('@utils/commons.js');
+require('@utils/css.js');
+require('@utils/tabs.js');
 
-set_nav(1)
+var set_nav = require('@utils/set_nav.js');
+
+set_nav(1);

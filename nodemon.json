@@ -1,9 +1,10 @@
 {
   "verbose": true,
   "watch": [
-    "module.config.js",
-    "multipage.config.js",
-    "webpack.config.js"
+    "build/module.config.js",
+    "build/multipage.config.js",
+    "build/webpack.config.js",
+    "config/index.js"
   ],
-  "exec": "webpack-dev-server --env development"
+  "exec": "webpack-dev-server --config build/webpack.config.js --env development"
 }

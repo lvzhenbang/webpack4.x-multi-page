@@ -83,3 +83,9 @@
   color: #a7a7a7;
   font-weight: bold;
 }
+
+@media(max-width: 991px)  {
+  .sj_block-title {
+    padding: 0 20px;
+  }
+}

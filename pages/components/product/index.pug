@@ -7,7 +7,7 @@ div(class="sj_loan_product container")
 
   +index-title(product.cn_name, product.en_name)
 
-  div(class="sj_product-list clearfix")
+  div(class="sj_product-list")
     each item in product.list && product.list.length ? product.list : []
       div(class="sj_product-item")
         a(href=item.href)

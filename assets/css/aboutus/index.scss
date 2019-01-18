@@ -14,9 +14,11 @@
   }
 }
 
-@media(max-width: 576px) {
+
+@media(max-width: 991px) {
   .about-list {
-    flex-direction: column 
+    flex-flow: row wrap; 
+    justify-content: center;
   }
 }
 

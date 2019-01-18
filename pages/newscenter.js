@@ -1,6 +1,13 @@
-var set_nav = require('@utils/set_nav.js')
+require('@utils/commons.js');
+require('@utils/css.js');
 
-set_nav(3)
+var set_nav = require('@utils/set_nav.js');
+
+document.write('hello')
+
+console.log(3);
+
+set_nav(3);
 
 // tab
 $('.sj_tab-item').on('click', function(e) {

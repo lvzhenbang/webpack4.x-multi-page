@@ -1,10 +1,11 @@
-- var map = require('@data/site-nav')
+- var map = require('@data/site-map')
+
 //- footer
 div(class="sj_footer")
   div(class="sj_wrapper")
     div(class="sj_map-box clearfix")
       ul(class="sj_map-nav")
-        each item in map
+        each item in map.nav
           li(class="sj_map-item sj_arrow-more")
             span
             a(href=item.href ? (item.type ? item.href + '#' + item.type : item.href) : 'javascript:;' class="sj_title" )= item.text
@@ -15,13 +16,13 @@ div(class="sj_footer")
 
       //- user service
       div(class="sj_user_service")
-        span 在线客服：400-075-2005
-        span 工作时间：9:00-18:00&nbsp;周一至周五
+        span 在线客服：#{map.service.phone}
+        span 工作时间：#{map.service.worktime}
 
       //- qrcode
       div(class="sj_qrcode")
-        img(src=require('path').join(__dirname, 'assets/imgs/other/index/sj-qr.png') alt="微信公众号二维码")
-        div 扫一扫关注圣捷投资
+        img(src=map.qrcode.img alt=map.qrcode.alt)
+        div= map.qrcode.text
         
   //- copyright
   div(class="sj_copyright")

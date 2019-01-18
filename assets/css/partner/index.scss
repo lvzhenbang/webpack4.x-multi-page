@@ -1,8 +1,10 @@
 /* partner */
-.sj_partner {}
+.sj_partner {
+}
 
 .sj_partner-list {
   display: flex;
+  padding-left: 0;
 }
 
 @media(min-width: 992px) {
@@ -12,9 +14,10 @@
   }
 }
 
-@media(max-width: 576px) {
+@media(max-width: 991px) {
   .sj_partner-list {
-    flex-direction: column;
+    flex-flow: row wrap;
+    justify-content: center;
   }
 }
 

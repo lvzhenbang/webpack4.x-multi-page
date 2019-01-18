@@ -154,3 +154,10 @@
     margin-bottom: 60px;
   }
 }
+
+@media(max-width: 991px) {
+  .sj_map-box { 
+    margin-left: 20px;
+    justify-content: center;
+  }
+}

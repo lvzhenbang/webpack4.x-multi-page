@@ -4,7 +4,7 @@ const imageminMozjpeg = require('imagemin-mozjpeg');
 const imageminOptipng = require('imagemin-optipng');
 const imageminGifsicle = require('imagemin-gifsicle');
 
-let dir = ['.', 'index', 'leader', 'news', 'recruit', 'news', 'second', 'style', 'video', 'wealth']
+let dir = require('../config').dir;
 
 for (let name of dir) {
   optizieImg(name)
@@ -13,11 +13,11 @@ for (let name of dir) {
 async function optizieImg(name) {
 	await imagemin(
     [
-      path.resolve(__dirname, 'assets/imgs/static/'+ name +'/*.jpg'),
-      path.resolve(__dirname, 'assets/imgs/static/'+ name +'/*.png'),
-      path.resolve(__dirname, 'assets/imgs/static/'+ name +'/*.gif')
+      path.resolve(__dirname, '../assets/imgs/static/'+ name +'/*.jpg'),
+      path.resolve(__dirname, '../assets/imgs/static/'+ name +'/*.png'),
+      path.resolve(__dirname, '../assets/imgs/static/'+ name +'/*.gif')
     ],
-    path.resolve(__dirname, 'assets/imgs/other/'+ name +'/'),
+    path.resolve(__dirname, '../assets/imgs/other/'+ name +'/'),
     {
       use: [
         imageminMozjpeg(),

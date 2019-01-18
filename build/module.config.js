@@ -5,21 +5,21 @@ module.exports =function(isDev) {
   return {
     rules: [
       {
-        include: path.resolve(__dirname, 'assets/css/'),
+        include: path.resolve(__dirname, '../assets/css/'),
         test: /\.scss$/,
         use: [
-          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader'
         ]
       },
       {
-        include: path.resolve(__dirname, 'pages/'),
+        include: path.resolve(__dirname, '../pages/'),
         test: /\.pug$/,
         loader: 'pug-loader'
       },
       {
-        include: path.resolve(__dirname, 'assets/fonts/'),
+        include: path.resolve(__dirname, '../assets/fonts/'),
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         use: [{
           loader: 'url-loader',
@@ -31,12 +31,12 @@ module.exports =function(isDev) {
         }]
       },
       {
-        include: path.resolve(__dirname, 'assets/imgs/base64/'),
+        include: path.resolve(__dirname, '../assets/imgs/base64/'),
         test: /\.(png|jpe?g)$/,
         use: 'url-loader'
       },
       {
-        include: path.resolve(__dirname, 'assets/imgs/other/'),
+        include: path.resolve(__dirname, '../assets/imgs/other/'),
         test: /\.(png|jpe?g)$/,
         use: {
           loader: 'file-loader',
@@ -48,7 +48,7 @@ module.exports =function(isDev) {
         }
       },
       {
-        include: path.resolve(__dirname, 'assets/imgs/other/sprites/'),
+        include: path.resolve(__dirname, '../assets/imgs/other/sprites/'),
         test: /\.(png|jpe?g|gif)$/,
         use: {
           loader: 'image-webpack-loader',

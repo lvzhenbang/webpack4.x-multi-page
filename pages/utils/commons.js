@@ -83,6 +83,7 @@ $('#banner>.carousel').Carousel({
 
 
 // map-siste
+if($(window).width < 576)
 $('.sj_map-nav').find('.sj_arrow-more').on('click', function() {
   if($(this).hasClass('active')) {
     $(this).removeClass('active')
