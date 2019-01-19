@@ -8,9 +8,22 @@ module.exports =function(isDev) {
         include: path.resolve(__dirname, '../assets/css/'),
         test: /\.scss$/,
         use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader'
+          isDev? {
+            loader: 'style-loader',
+            options: { sourceMap: true }
+          } : MiniCssExtractPlugin.loader,
+          { 
+            loader: 'css-loader',
+            options: {
+              sourceMap: true
+            }
+          },
+          { 
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true
+            }
+          }
         ]
       },
       {
