@@ -15,6 +15,7 @@
   "author": "lzb",
   "license": "MIT",
   "devDependencies": {
+    "autoprefixer": "^9.4.5",
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^2.0.1",
     "file-loader": "^3.0.1",
@@ -27,6 +28,7 @@
     "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.11.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-loader": "^3.0.0",
     "pug": "^2.0.3",
     "pug-loader": "^2.4.0",
     "sass-loader": "^7.1.0",

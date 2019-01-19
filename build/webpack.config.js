@@ -1,10 +1,10 @@
 'use strict';
 
 const path = require('path');
+const glob = require('glob');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const SpritesmithPlugin = require('webpack-spritesmith');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const multipage = require('./multipage.config.js');
 const Module = require('./module.config.js');
@@ -66,18 +66,18 @@ module.exports = (mode) => {
     plugins: plugins.concat(
       [
         new MiniCssExtractPlugin({
-          filename: 'assets/css/[name].[contenthash].css',
-          chunkFilename: 'assets/css/[id].[contenthash].css'
+          filename: 'assets/css/[name].[contenthash].css'
         }),
         new OptimizeCSSAssetsPlugin({
           cssProcessorOptions: isDev ? {safe: true} : {
-              map: {
-                inline: false
-              },
-              safe: true
+            map: {
+              inline: false
+            },
+            safe: true
           }
-      })
-    ]),
+        })
+      ]
+    ),
     devtool: isDev ? 'cheap-module-eval-source-map' : 'cheap-module-source-map'
   }
 }
