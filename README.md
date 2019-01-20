@@ -64,6 +64,15 @@ v0.7.1
 
 * 修复构建耗时的问题（6-8S构建完成），减少一半多的时间
 * 整理构建启动文件到`./build/`目录，添加配置文件`./config/index.js`
-* 启用`source-map`，
+* 启用`source-map`
 * 启用了`SplitChunksPlugin`，增加了`common`模块
 * 修复了`product`、`contactus`、`footer`的bug
+
+v0.7.2
+
+* 提取子导航的数据（shzr，sxy，zjsj，ywbk），完成整个静态站数据的整理
+* 因为数据存放在`*.js`文件中，然后被`pug-loader`处理，进而可以被`url-loader`处理。这样保证了整个静态站的所有图片都可以被`url-loader`或`file-loader`处理
+* 为生产模式下的图片添加`hash`
+
+
+

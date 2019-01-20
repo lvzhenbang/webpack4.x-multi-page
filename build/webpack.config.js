@@ -1,10 +1,10 @@
 'use strict';
 
 const path = require('path');
-const glob = require('glob');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const SpritesmithPlugin = require('webpack-spritesmith');
+const CopywebpackPlugin = require('copy-webpack-plugin');
+const Workbox = require('workbox-webpack-plugin');
 
 const multipage = require('./multipage.config.js');
 const Module = require('./module.config.js');
@@ -75,6 +75,14 @@ module.exports = (mode) => {
             },
             safe: true
           }
+        }),
+        new CopywebpackPlugin([{
+            from: path.join(__dirname, '../assets', 'lib'),
+            to: path.join(__dirname, '../dist', 'assets', 'js')
+        }]),
+        new Workbox.GenerateSW({
+          clientsClaim: true,
+          skipWaiting: true
         })
       ]
     ),
