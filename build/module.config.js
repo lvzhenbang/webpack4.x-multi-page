@@ -65,7 +65,7 @@ module.exports =function(isDev) {
           loader: 'file-loader',
           options: {
             // name: isDev ? '[name].[ext]' : '[name].[hash].[ext]',
-            name: '[name].[ext]',
+            name: '[name][hash].[ext]',
             outputPath: 'assets/imgs/'
           }
         }
