@@ -1,4 +1,4 @@
-extends ./template.pug
+extends ./template/index.pug
 
 block banners
   include ./components/commons/banner/index.pug
@@ -8,26 +8,7 @@ block contents
   include ./components/commons/title/block-title.pug
   include ./components/commons/tab/index.pug
 
-  -
-    var sxy = {
-      cn_name: '圣捷商学院',
-      en_name: 'SHENGJIE BUSINESS SCHOOL',
-      tabs: [
-        {
-          cn_name: '圣捷商学院',
-          en_name: 'SHENGJIE BUSINESS SCHOOL',
-          type: 'school'
-        }, {
-          cn_name: '商学院名人',
-          en_name: 'BUSINESS SCHOOL CELEBRITIES',
-          type: 'celebrites'
-        }, {
-          cn_name: '商学院课堂',
-          en_name: 'BUSINESS SCHOOL CLASSROOM',
-          type: 'classroom'
-        }
-      ]
-    }
+  - var sxy = require('@data/sidenav.js').sxy
   
   +block-title(sxy.cn_name, sxy.en_name)
 
