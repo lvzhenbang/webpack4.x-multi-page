@@ -1,4 +1,5 @@
 var $ = require('jquery')
+require('./service-workers.js')
 
 window.addEventListener('scroll', function() {
   mapShow()

@@ -78,9 +78,10 @@ module.exports = (mode) => {
         }),
         new CopywebpackPlugin([{
             from: path.join(__dirname, '../assets', 'lib'),
-            to: path.join(__dirname, '../dist', 'assets', 'js')
+            to: path.join(__dirname, '../dist/assets', 'js')
         }]),
         new Workbox.GenerateSW({
+          swDest: path.join(__dirname, '../dist', 'service-worker.js'),
           clientsClaim: true,
           skipWaiting: true
         })
