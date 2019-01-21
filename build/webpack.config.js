@@ -77,14 +77,16 @@ module.exports = (mode) => {
           }
         }),
         new CopywebpackPlugin([{
-            from: path.join(__dirname, '../assets', 'lib'),
-            to: path.join(__dirname, '../dist')
+          from: path.join(__dirname, '../assets', 'lib'),
+          to: path.join(__dirname, '../dist')
         }]),
         new Workbox.GenerateSW({
-          swDest: path.join(__dirname, '../dist', 'service-worker.js'),
           clientsClaim: true,
           skipWaiting: true,
-          importWorkboxFrom: 'local'
+          importWorkboxFrom: isDev ? 'cdn' : 'local'
+        }),
+        new Workbox.InjectManifest({
+          swSrc: path.join(__dirname, '../dist', 'workbox-v3.6.3/workbox-sw.js')
         })
       ]
     ),
