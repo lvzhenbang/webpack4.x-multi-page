@@ -77,5 +77,10 @@ v0.7.2
 v0.8.0
 
 * 引入`workbox`实现`PWA`功能
+* 使用`manifest.json`创建`desktop icon`
+
+这个版本的代码的演示示例请参考[`https://lvzhenbang.github.io/webpack4.x-multi-page/dist/`](https://lvzhenbang.github.io/webpack4.x-multi-page/dist/)
+
+参考文章[workbox](https://github.com/lvzhenbang/webpack-learning/tree/master/doc/two/workbox.md)
 
 
