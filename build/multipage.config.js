@@ -22,7 +22,7 @@ for (let nav of navs) {
     /* page head */
     title: nav.text,
     meta: nav.meta,
-    favicon: path.resolve(__dirname, '../assets/favicon.jpg'),
+    favicon: path.resolve(__dirname, '../assets/lib/favicon-144.png'),
     template: path.resolve(__dirname, '../pages/' + nav.name + '.pug'),
     minify: true
   }))
