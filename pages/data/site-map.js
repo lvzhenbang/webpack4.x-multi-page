@@ -53,10 +53,10 @@ module.exports = {
       ]
     },
     {
-      href: 'sxy.html',
+      href: '',
       text: '圣捷商学院',
-      type: 'school',
       subMap: [
+        { href: 'sxy.html', text: '商学院名人', type: 'school' },
         { href: 'sxy.html', text: '商学院名人', type: 'celebrites' },
         { href: 'sxy.html', text: '商学院1-4期', type: 'classroom' }      
       ]

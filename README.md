@@ -83,4 +83,11 @@ v0.8.0
 
 参考文章[workbox](https://github.com/lvzhenbang/webpack-learning/tree/master/doc/two/workbox.md)
 
+v0.9.0
+
+* 添加`webpack`构建分析工具
+* 添加`社会责任`页面数据
+* 修复`站点地图`单击事件无效问题
+* 部分样式修改
+
 

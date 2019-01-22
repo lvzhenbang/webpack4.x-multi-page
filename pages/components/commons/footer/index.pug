@@ -6,13 +6,18 @@ div(class="sj_footer")
     div(class="sj_map-box clearfix")
       ul(class="sj_map-nav")
         each item in map.nav
-          li(class="sj_map-item sj_arrow-more")
-            span
-            a(href=item.href ? (item.type ? item.href + '#' + item.type : item.href) : 'javascript:;' class="sj_title" )= item.text
-            ul(class="sj_map-menu")
-              each subItem in item.subMap ? item.subMap : []
-                li
-                  a(href=subItem.href ? (subItem.type ? subItem.href + '#' + subItem.type : subItem.href) : 'javascript:;')= subItem.text
+          if item.subMap
+            li(class="sj_map-item sj_arrow-more")
+              span
+              a(href=item.href ? (item.type ? item.href + '#' + item.type : item.href) : 'javascript:;' class="sj_title" )= item.text
+              ul(class="sj_map-menu")
+                each subItem in item.subMap
+                  li
+                    a(href=subItem.href ? (subItem.type ? subItem.href + '#' + subItem.type : subItem.href) : 'javascript:;')= subItem.text
+          else  
+            li(class="sj_map-item")
+              a(href=item.href ? (item.type ? item.href + '#' + item.type : item.href) : 'javascript:;' class="sj_title" )= item.text
+              
 
       //- user service
       div(class="sj_user_service")
