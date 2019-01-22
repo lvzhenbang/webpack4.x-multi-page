@@ -7,7 +7,10 @@
     "dev": "nodemon",
     "build": "webpack --config build/webpack.config.js --env production",
     "img": "node build/optizing-img.js",
-    "start": "http-server dist"
+    "start": "http-server dist",
+    "stats": "webpack-bundle-analyzer stats.json",
+    "stats:dev": "webpack --config build/webpack.config.js --env development --json > stats.json",
+    "stats:build": "webpack --config build/webpack.config.js --env production --json > stats.json"
   },
   "keywords": [
     "webpack",
@@ -38,10 +41,12 @@
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
     "webpack": "^4.27.1",
+    "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.14",
     "webpack-merge": "^4.1.5",
     "webpack-spritesmith": "^0.5.4",
+    "workbox-build": "^3.6.3",
     "workbox-webpack-plugin": "^3.6.3"
   },
   "dependencies": {

@@ -80,13 +80,16 @@ module.exports = (mode) => {
           from: path.join(__dirname, '../assets', 'lib'),
           to: path.join(__dirname, '../dist')
         }]),
-        new Workbox.GenerateSW({
-          clientsClaim: true,
-          skipWaiting: true,
-          importWorkboxFrom: isDev ? 'cdn' : 'local'
-        }),
+        // new Workbox.GenerateSW({
+        //   clientsClaim: true,
+        //   skipWaiting: true,
+        //   importWorkboxFrom: 'local'
+        // }),
         new Workbox.InjectManifest({
-          swSrc: path.join(__dirname, '../dist', 'workbox-v3.6.3/workbox-sw.js')
+          // importWorkboxFrom: 'local',
+          importsDirectory: path.join(__dirname, '../dist'),
+          swSrc: path.resolve(__dirname, '../dist/workbox-v3.6.3/workbox-sw.js'),
+          swDest: path.resolve(__dirname, '../dist/service-worker.js')
         })
       ]
     ),
