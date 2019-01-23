@@ -94,3 +94,8 @@ if($(window).width() < 576) {
     }
   })
 }
+
+// lazyload
+var lazyload = require('./lazyload-img.js');
+
+lazyload(document.querySelectorAll('.lazy'))

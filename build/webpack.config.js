@@ -20,7 +20,7 @@ module.exports = (mode) => {
     mode: mode,
     output: {
       path: path.resolve(__dirname, '../dist/'),
-      filename: isDev ? 'assets/js/[name].js' : 'assets/js/[name].[contenthash].js',
+      filename: isDev ? 'assets/js/[name].js' : 'assets/js/[name].[chunkhash].js',
       publicPath: isDev ? host.devUrl : host.deployUrl
     },
     devServer: {
@@ -66,7 +66,7 @@ module.exports = (mode) => {
     plugins: plugins.concat(
       [
         new MiniCssExtractPlugin({
-          filename: 'assets/css/[name].[contenthash].css'
+          filename: 'assets/css/[name].[chunkhash].css'
         }),
         new OptimizeCSSAssetsPlugin({
           cssProcessorOptions: isDev ? {safe: true} : {

@@ -3,7 +3,7 @@ mixin block-item(item)
       if citem.type === 'text'
         p= citem.text
       else if citem.type === 'img'
-        img(src=citem.src width=citem.width height=citem.height)
+        img(class="lazy" src='' data-src=citem.src width=citem.width height=citem.height)
       else if citem.type === 'form'
         table
           thead
@@ -17,7 +17,7 @@ mixin block-item(item)
                 td= td.rate
       else if citem.type === 'card'
         div(class="sj_card")
-          img(src=citem.left.src alt=citem.left.alt)
+          img(class="lazy" src='' data-src=citem.left.src alt=citem.left.alt)
           div(class="sj_team-desc")
             p(class="sj_team-name")= citem.right.name
             each ptext in citem.right.list && citem.right.list.length ? citem.right.list : []

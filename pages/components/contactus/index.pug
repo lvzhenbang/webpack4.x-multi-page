@@ -10,7 +10,7 @@ div(class="sj_contactus")
     img(class="sj_tag" src=contactus.img)
     div(class="sj_left")
       div(class="sj_ct-logo")
-        img(src=contactus.company.img alt=contactus.company.alt)
+        img(class="lazy" src='' data-src=contactus.company.img alt=contactus.company.alt)
         span= contactus.company.name
       
       ul(class="sj_ct-list")
@@ -23,7 +23,7 @@ div(class="sj_contactus")
       ul(class="sj_qr-list")
         each item in contactus.qr_list && contactus.qr_list.length ? contactus.qr_list : []
           li(class="sj_qr-item")
-            img(src=item.img alt=item.alt)
+            img(class="lazy" src='' data-src=item.img alt=item.alt)
             div(class="sj_qr-des")
               span= item.name
               span= item.qname

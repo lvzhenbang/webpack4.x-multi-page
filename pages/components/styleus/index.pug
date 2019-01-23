@@ -5,5 +5,5 @@
 div(class="style-list")
   each item in styles.list && styles.list.length ? styles.list : []
     div(class="style-item")
-      img(src=item.img data-width=item.width data-height=item.height title=item.title)
+      img(class="lazy" src='' data-src=item.img data-width=item.width data-height=item.height title=item.title)
       div(class="desc")= item.desc

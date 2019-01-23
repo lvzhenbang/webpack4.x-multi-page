@@ -10,4 +10,4 @@ div(class="sj_partner")
   ul(class="sj_partner-list")
     each item in partner.list && partner.list.length ? partner.list : []
       div(class="sj_partner-item")
-        img(src=item.img alt=item.alt)
+        img(class="lazy" src='' data-src=item.img alt=item.alt)

@@ -6,4 +6,4 @@ div(id="banner")
       each item in banner ? banner : []
         div(class="carousel-item")
           a(href=item.href title=item.title)
-            img(src=item.img alt=item.title)
+            img(class="lazy" src='' data-src=item.img alt=item.title)
