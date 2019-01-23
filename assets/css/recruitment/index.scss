@@ -103,14 +103,12 @@
   border-style: solid;
   border-color: #fff;
   background: #fff;
-  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 .sj_table-tr:hover {
   border-color: #eaeaea;
   box-shadow: 0 0 2px #eaeaea;
-  -webkit-transform: scale(1.01);
   transform: scale(1.01);
   cursor: pointer;
 }

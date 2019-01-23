@@ -81,18 +81,17 @@
 
 .show {
   display: block;
-  -webkit-animation: move .4s linear forwards;
   animation: move .4s linear forwards;
 }
 
 @keyframes move {
   from {
-      top: 50px;
-      opacity: 0
+    top: 50px;
+    opacity: 0
   }
 
   to {
-      top: 0px;
-      opacity: 1
+    top: 0px;
+    opacity: 1
   }
 }

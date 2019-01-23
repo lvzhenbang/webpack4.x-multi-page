@@ -1,24 +1,17 @@
 /* 企业风采 */
 .style-list {
-  width: 1240px;
-  margin: 0 -7px;
   margin-top: 28px;
   overflow: hidden;
 }
 
 .style-item {
   position: relative;
-  float: left;
-  margin: 0 5px 10px;
   overflow: hidden;
   cursor: pointer;
 }
 
 .style-item img {
   display: block;
-  width: 100%;
-  height: auto;
-  -webkit-transition: transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -39,12 +32,52 @@
 }
 
 .style-item:hover img {
-  -webkit-transform-origin: center center;
   transform-origin: center center;
-  -webkit-transform: scale3d(1.25, 1.25, 1.0);
   transform: scale3d(1.25, 1.25, 1.0);
 }
 
 .style-item:hover .desc {
   background: rgba(29, 32, 136, .8);
+}
+
+
+
+@media(min-width: 992px) {
+  .style-list {  
+    width: 1240px;
+    margin: 0 -7px;
+  }
+
+  .style-item {
+    float: left;
+    margin: 0 5px 10px;
+  }
+}
+
+@media(max-width: 991px) {
+  .style-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin-right: 20px;
+  }
+  .style-item {
+    flex-grow: 1;
+    height: 300px;
+    margin: 20px 0 0 20px;
+  }
+  .style-item img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media(max-width: 576px) {
+  .style-item {
+    height: 420px;
+  }
+
+  .style-item:hover img {
+    transform: scale3d(1.1, 1.1, 1.0);
+  }
 }

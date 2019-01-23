@@ -44,14 +44,11 @@ a {
   width: 18px;
   height: 15px;
   margin-top: 6px;
-  -webkit-transition: transform 0.3s linear;
   transition: transform 0.3s linear;
 }
 
 .sj_arrow-more.active span {
-  -webkit-transform-origin: center center;
   transform-origin: center center;
-  -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
@@ -69,9 +66,7 @@ a {
   height: 12px;
   border-top: 2px solid #6d6d6d;
   border-right: 2px solid #6d6d6d;
-  -webkit-transform-origin: center center;
   transform-origin: center center;
-  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 

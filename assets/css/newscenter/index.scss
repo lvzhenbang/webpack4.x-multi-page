@@ -41,12 +41,10 @@
   display: flex;
   margin: 30px 0;
   
-  -webkit-transition: transform 0.2s linear;
   transition: transform 0.2s linear;
 }
 
 .sj_news-center .sj_new-item.hide {
-  -webkittransform: scale(0);
   transform: scale(0)
 }
 
