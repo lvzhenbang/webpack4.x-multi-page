@@ -8,6 +8,10 @@ html(lang="en")
     title= htmlWebpackPlugin.options.title
     link(rel="manifest" href="manifest.json")
     
+    //- script(src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js")
+    script(src="jquery.min.js")
+    script(src="http://api.map.baidu.com/api?v=2.0&ak=zZ1jDRxcKuPUEX4Ar77rxaLqhk4v6RAj")
+    
   body
     //- header
     include ../components/commons/header/index.pug
@@ -21,7 +25,3 @@ html(lang="en")
     include ../components/commons/backtop/index.pug
     //- script
     //-   include ./utils/map.js
-    //- script(src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js")
-    script(src="jquery.min.js")
-    script(src="http://api.map.baidu.com/api?v=2.0&ak=zZ1jDRxcKuPUEX4Ar77rxaLqhk4v6RAj")
-    
