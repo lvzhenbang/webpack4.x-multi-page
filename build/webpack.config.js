@@ -80,17 +80,17 @@ module.exports = (mode) => {
           from: path.join(__dirname, '../assets', 'lib'),
           to: path.join(__dirname, '../dist')
         }]),
-        // new Workbox.GenerateSW({
-        //   clientsClaim: true,
-        //   skipWaiting: true,
-        //   importWorkboxFrom: 'local'
-        // }),
-        new Workbox.InjectManifest({
-          // importWorkboxFrom: 'local',
-          importsDirectory: path.join(__dirname, '../dist'),
-          swSrc: path.resolve(__dirname, '../dist/workbox-v3.6.3/workbox-sw.js'),
-          swDest: path.resolve(__dirname, '../dist/service-worker.js')
-        })
+        new Workbox.GenerateSW({
+          clientsClaim: true,
+          skipWaiting: true,
+          importWorkboxFrom: 'local'
+        }),
+        // new Workbox.InjectManifest({
+        //   // importWorkboxFrom: 'local',
+        //   importsDirectory: path.join(__dirname, '../dist'),
+        //   swSrc: path.resolve(__dirname, '../dist/workbox-v3.6.3/workbox-sw.js'),
+        //   swDest: path.resolve(__dirname, '../dist/service-worker.js')
+        // })
       ]
     ),
     devtool: isDev ? 'cheap-module-eval-source-map' : 'cheap-module-source-map'
