@@ -1,10 +1,15 @@
-# webpack4.x multi-page
+# webpack4.x-angularjs
 
 使用webpack4.x快速构建生成一个多页面的静态站点。
 
 可以快速，方便的构建一个对页面的企业站或个人博客。
 
 注：`多页面应用` (WPA) 的用户体验相较于 `单页面应用` （SPA）的效果，并不是特别好。一个突出的缺点就是`抖动`。本示例的 `单页面` 示例，另见[ `webpack4.x-angularjs` ](https://github.com/lvzhenbang/webpack4.x-angularjs)。
+
+相关项目：
+
+* [webpack4.x-multi-page](https://github.com/lvzhenbang/webpack4.x-multi-page) for `multi-page`。[demo](https://lvzhenbang.github.io/webpack4.x-multi-page/dist/)
+* [webpack4.x-angularjs](https://github.com/lvzhenbang/webpack4.x-angularjs) for `angular.js`. [demo](https://lvzhenbang.github.io/webpack4.x-angularjs/dist/#/index)。
 
 ## 安装项目所需依赖
 
