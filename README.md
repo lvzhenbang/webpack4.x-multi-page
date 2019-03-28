@@ -1,4 +1,4 @@
-# webpack4.x-angularjs
+# webpack4.x-multi-page
 
 使用webpack4.x快速构建生成一个多页面的静态站点。
 
@@ -8,8 +8,8 @@
 
 相关项目：
 
-* [webpack4.x-multi-page](https://github.com/lvzhenbang/webpack4.x-multi-page) for `multi-page`。[demo](https://lvzhenbang.github.io/webpack4.x-multi-page/dist/)
-* [webpack4.x-angularjs](https://github.com/lvzhenbang/webpack4.x-angularjs) for `angular.js`. [demo](https://lvzhenbang.github.io/webpack4.x-angularjs/dist/#/index)。
+* [webpack-anuglar](https://github.com/lvzhenbang/webpack4.x-multi-page) for `angular7`。[demo](https://lvzhenbang.github.io/webpack-angular/dist/)
+* [webpack4.x-angularjs](https://github.com/lvzhenbang/webpack4.x-angularjs) for `angular.js`. [demo](https://lvzhenbang.github.io/webpack4.x-angularjs/dist/)。
 
 ## 安装项目所需依赖
 
