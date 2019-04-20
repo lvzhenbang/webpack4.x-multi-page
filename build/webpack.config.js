@@ -1,6 +1,7 @@
 'use strict';
 
 const path = require('path');
+const DefinePlugin = require('webpack').DefinePlugin;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CopywebpackPlugin = require('copy-webpack-plugin');
@@ -65,6 +66,9 @@ module.exports = (mode) => {
     module: Module(isDev),
     plugins: plugins.concat(
       [
+        new DefinePlugin({
+          "SERVICE_URL": isDev ? JSON.stringify(host.devUrl) : JSON.stringify(host.deployUrl)
+        }),
         new MiniCssExtractPlugin({
           filename: 'assets/css/[name].[chunkhash].css'
         }),
