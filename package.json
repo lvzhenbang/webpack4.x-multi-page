@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "intersection-observer": "^0.5.1",
+    "jcarousel": "^0.3.8",
     "jquery": "^3.3.1"
   }
 }

@@ -1,4 +1,4 @@
-@import '@css/utils/carousel.scss';
+@import '../utils/carousel.scss';
 
 #banner {
   width: 100%;
@@ -7,6 +7,16 @@
 
 #banner .carousel {
   padding-top: 38%;
+}
+
+#banner .carousel-inner {
+  width: 100000em;
+}
+
+.carousel-item>a {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 @media(max-width: 576px) {

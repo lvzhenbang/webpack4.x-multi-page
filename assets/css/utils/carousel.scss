@@ -32,7 +32,8 @@
   font-size: 0
 }
 
-.carousel-indicators span {
+.carousel-indicators span,
+.carousel-indicators a {
   display: inline-block;
   width: 12px;
   height: 12px;
@@ -42,7 +43,8 @@
   cursor: pointer
 }
 
-.carousel-indicators span.active {
+.carousel-indicators span.active,
+.carousel-indicators a.active {
   background-color: #de3a3a
 }
 
