@@ -10,6 +10,7 @@ class Lazyload {
       entries.forEach(function(entry) {
         if(entry.intersectionRatio > 0) {
           observer.unobserve(entry.target)
+          entry.target.classList.remove('lazy')
 
           var datasrc = entry.target.getAttribute('data-src')
           var datasrcset = entry.target.getAttribute('data-srcset')

@@ -3,7 +3,6 @@
 const path = require('path');
 const DefinePlugin = require('webpack').DefinePlugin;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CopywebpackPlugin = require('copy-webpack-plugin');
 const Workbox = require('workbox-webpack-plugin');
 
@@ -58,7 +57,6 @@ module.exports = (mode) => {
         '@pages': path.join(__dirname, '..', 'pages'),
         '@css': path.join(__dirname, '..', 'assets', 'css'),
         '@img': path.join(__dirname, '..', 'assets', 'imgs'),
-        // '@font': path.join(__dirname, '..', 'assets', 'fonts'),
         '@data': path.join(__dirname, '..', 'pages', 'data'),
         '@utils': path.join(__dirname, '..', 'pages', 'utils')
       }
@@ -71,14 +69,6 @@ module.exports = (mode) => {
         }),
         new MiniCssExtractPlugin({
           filename: 'assets/css/[name].[chunkhash].css'
-        }),
-        new OptimizeCSSAssetsPlugin({
-          cssProcessorOptions: isDev ? {safe: true} : {
-            map: {
-              inline: false
-            },
-            safe: true
-          }
         }),
         new CopywebpackPlugin([{
           from: path.join(__dirname, '../assets', 'lib'),
