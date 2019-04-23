@@ -8,7 +8,7 @@
     "dev": "nodemon",
     "build": "webpack --config build/webpack.config.js --env production",
     "img": "node build/optizing-img.js",
-    "gh-pages": "git checkout -b gh-pages && npm run build&& git add dist && git commit -am 'publish' &&  git push origin gh-pages:gh-pages --force && git checkout master && git branch -D gh-pages",
+    "gh-pages": "git checkout -b gh-pages && npm run build && git add dist && git commit -m 'publish' &&  git push origin gh-pages:gh-pages --force && git checkout master && git branch -D gh-pages",
     "stats": "webpack-bundle-analyzer stats.json",
     "stats:dev": "webpack --config build/webpack.config.js --env development --json > stats.json",
     "stats:build": "webpack --config build/webpack.config.js --env production --json > stats.json"
