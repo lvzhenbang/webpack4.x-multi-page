@@ -1,7 +1,7 @@
 
 module.exports = [
   {
-    href: '/',
+    href: 'index.html',
     text: '首页',
     name: 'index',
     meta: {
