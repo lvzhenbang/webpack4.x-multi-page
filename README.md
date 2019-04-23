@@ -39,47 +39,24 @@ npm run build
 
 ## 如何构建多页面应用
 
-v0.1 使用`SplitChunk`实现js代码模块化拆分
+v1.0.0
 
-参考文章：[构建多页面应用](https://github.com/lvzhenbang/webpack-learning/tree/master/doc/two/multi-page.md)
+* 移除`optimize-css-assets-webpack-plugin`插件，使用`cssnano`来实现对webpack分离出的`*.css`进行压缩；
+* 移除`terser-webpack-plugin`插件，使用webpack内置的插件对`*.js`进行压缩；
+* 优化`lazyload`，同时修复`轮播图`的显示问题；
+* 修复由于`https`造成的地图无法加载的问题。
 
-v0.2 实现css代码的模块化拆分
+v0.9.1
 
-参考文章：[构建多页面应用——单个页面的处理](https://github.com/lvzhenbang/webpack-learning/tree/master/doc/two/multi-page-single-page.md)
+* 更新，处理`cdn`的阻塞
+* 使用`lazyload`处理图片
 
-v0.3 实现html代码的模块化拆分
+v0.9.0
 
-参考文章：[构建多页面应用——模板](https://github.com/lvzhenbang/webpack-learning/tree/master/doc/two/multi-page-template.md)
-
-v0.4 重构目录，实现对静态资源的处理
-
-参考文章：[构建多页面应用——静态资源处理](https://github.com/lvzhenbang/webpack-learning/tree/master/doc/two/multi-page-img-category.md)
-
-v0.5 实现对图片的优化处理 && 给URL添加hash，实现对页面的动画控制
-
-参考文章：[构建多页面应用——优化](https://github.com/lvzhenbang/webpack-learning/tree/master/doc/two/multi-page-img-category.md)
-
-参考文章：[构建多页面应用——hash](https://github.com/lvzhenbang/webpack-learning/tree/master/doc/two/multi-page-hash.md)
-
-v0.6 提取整理所有的mock Data && 使用webpack的`resolve.alias`实现对路径的优化
-
-参考文章：[构建多页面应用——优化（二）](https://github.com/lvzhenbang/webpack-learning/tree/master/doc/two/multi-page-mockdata.md)
-
-v0.7 实现web的响应式功能
-
-v0.7.1 
-
-* 修复构建耗时的问题（6-8S构建完成），减少一半多的时间
-* 整理构建启动文件到`./build/`目录，添加配置文件`./config/index.js`
-* 启用`source-map`
-* 启用了`SplitChunksPlugin`，增加了`common`模块
-* 修复了`product`、`contactus`、`footer`的bug
-
-v0.7.2
-
-* 提取子导航的数据（shzr，sxy，zjsj，ywbk），完成整个静态站数据的整理
-* 因为数据存放在`*.js`文件中，然后被`pug-loader`处理，进而可以被`url-loader`处理。这样保证了整个静态站的所有图片都可以被`url-loader`或`file-loader`处理
-* 为生产模式下的图片添加`hash`
+* 添加`webpack`构建分析工具
+* 添加`社会责任`页面数据
+* 修复`站点地图`单击事件无效问题
+* 部分样式修改
 
 v0.8.0
 
@@ -90,16 +67,44 @@ v0.8.0
 
 参考文章[workbox](https://github.com/lvzhenbang/webpack-learning/tree/master/doc/two/workbox.md)
 
-v0.9.0
+v0.7.2
 
-* 添加`webpack`构建分析工具
-* 添加`社会责任`页面数据
-* 修复`站点地图`单击事件无效问题
-* 部分样式修改
+* 提取子导航的数据（shzr，sxy，zjsj，ywbk），完成整个静态站数据的整理
+* 因为数据存放在`*.js`文件中，然后被`pug-loader`处理，进而可以被`url-loader`处理。这样保证了整个静态站的所有图片都可以被`url-loader`或`file-loader`处理
 
-v0.9.1
+v0.7.1 
 
-* 更新，处理`cdn`的阻塞
-* 使用`lazyload`处理图片
+* 修复构建耗时的问题（6-8S构建完成），减少一半多的时间
+* 整理构建启动文件到`./build/`目录，添加配置文件`./config/index.js`
+* 启用`source-map`
+* 启用了`SplitChunksPlugin`，增加了`common`模块
+* 修复了`product`、`contactus`、`footer`的bug
+* 为生产模式下的图片添加`hash`
 
+v0.7 实现web的响应式功能
 
+v0.6 提取整理所有的mock Data && 使用webpack的`resolve.alias`实现对路径的优化
+
+参考文章：[构建多页面应用——优化（二）](https://github.com/lvzhenbang/webpack-learning/tree/master/doc/two/multi-page-mockdata.md)
+
+v0.5 实现对图片的优化处理 && 给URL添加hash，实现对页面的动画控制
+
+参考文章：[构建多页面应用——优化](https://github.com/lvzhenbang/webpack-learning/tree/master/doc/two/multi-page-img-category.md)
+
+参考文章：[构建多页面应用——hash](https://github.com/lvzhenbang/webpack-learning/tree/master/doc/two/multi-page-hash.md)
+
+v0.4 重构目录，实现对静态资源的处理
+
+参考文章：[构建多页面应用——静态资源处理](https://github.com/lvzhenbang/webpack-learning/tree/master/doc/two/multi-page-img-category.md)
+
+v0.3 实现html代码的模块化拆分
+
+参考文章：[构建多页面应用——模板](https://github.com/lvzhenbang/webpack-learning/tree/master/doc/two/multi-page-template.md)
+
+v0.2 实现css代码的模块化拆分
+
+参考文章：[构建多页面应用——单个页面的处理](https://github.com/lvzhenbang/webpack-learning/tree/master/doc/two/multi-page-single-page.md)
+
+v0.1 使用`SplitChunk`实现js代码模块化拆分
+
+参考文章：[构建多页面应用](https://github.com/lvzhenbang/webpack-learning/tree/master/doc/two/multi-page.md)
