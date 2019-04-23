@@ -73,17 +73,14 @@ function mapShow() {
 
 
 // banner
-require('jcarousel');
+var Swiper = require('swiper');
 
-$('#banner .carousel').jcarousel();
-$('#banner .carousel-indicators')
-.on('jcarouselpagination:active', 'a', function() {
-  $(this).addClass('active');
+var mySwiper = new Swiper('.swiper-container',{
+  pagination: '.carousel-indicators',
+  loop:true,
+  grabCursor: true,
+  paginationClickable: true
 })
-.on('jcarouselpagination:inactive', 'a', function() {
-  $(this).removeClass('active');
-})
-.jcarouselPagination();
 
 
 // map-siste

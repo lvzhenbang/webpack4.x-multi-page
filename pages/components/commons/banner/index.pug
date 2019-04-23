@@ -1,10 +1,10 @@
 - var banner = require('@data/banner.js')
 
 div(id="banner")
-  div(class="carousel")
-    div(class="carousel-inner")
+  div(class="carousel swiper-container")
+    div(class="carousel-inner swiper-wrapper")
       each item in banner ? banner : []
-        div(class="carousel-item")
+        div(class="carousel-item swiper-slide")
           a(href=item.href title=item.title)
-            img(class="lazy" src='' data-src=item.img alt=item.title)
+            img(src=item.img alt=item.title)
     <p class="carousel-indicators"></p>

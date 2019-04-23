@@ -3726,13 +3726,6 @@ isurl@^1.0.0-alpha5:
     has-to-string-tag-x "^1.2.0"
     is-object "^1.0.1"
 
-jcarousel@^0.3.8:
-  version "0.3.8"
-  resolved "https://registry.yarnpkg.com/jcarousel/-/jcarousel-0.3.8.tgz#8910fc6171227127fa1c63726328130a2f1f6701"
-  integrity sha512-4dtozVmpBVuNViTVjnPr7FPj6E336JtrSJpJwoCjf+EBylmYpe0MhJo/eDUUPfeOd2kiGrhFyRnuucQGenLbMA==
-  dependencies:
-    jquery ">=1.7"
-
 joi@^11.1.1:
   version "11.4.0"
   resolved "https://registry.yarnpkg.com/joi/-/joi-11.4.0.tgz#f674897537b625e9ac3d0b7e1604c828ad913ccb"
@@ -3749,11 +3742,6 @@ jpeg-js@0.0.4:
 jpeg-js@^0.3.2:
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/jpeg-js/-/jpeg-js-0.3.4.tgz#dc2ba501ee3d58b7bb893c5d1fab47294917e7e7"
-
-jquery@>=1.7:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.4.0.tgz#8de513fa0fa4b2c7d2e48a530e26f0596936efdf"
-  integrity sha512-ggRCXln9zEqv6OqAGXFEcshF5dSBvCkzj6Gm2gzuR5fWawaX8t7cxKVkkygKODrDAzKdoYw3l/e3pm3vlT4IbQ==
 
 jquery@^3.3.1:
   version "3.3.1"
@@ -6718,6 +6706,11 @@ svgo@^1.0.5:
     stable "~0.1.6"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
+
+swiper@2:
+  version "2.7.6"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-2.7.6.tgz#9b6c782adde0301a35d7219cf4d850964a43687a"
+  integrity sha1-m2x4Kt3gMBo11yGc9NhQlkpDaHo=
 
 tapable@^1.0.0, tapable@^1.1.0:
   version "1.1.1"
