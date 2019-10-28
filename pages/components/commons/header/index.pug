@@ -9,14 +9,14 @@ div(class="sj_info")
 mixin nav(nav)
   div(class="sj_wrapper")
     div(class="sj_logo")
-      a(href="./index.html")
+      a(href="./index.html" target="_self")
         img(src=loadImg('logo.png') alt='圣捷集团')
     div(class="sj_navbar")
       div(class="sj_navbar-container")
         ul(class="sj_navbar-box")
           each item in nav ? nav : []
             li
-              a(href=item.href)= item.text
+              a(href=item.href target="_blank")= item.text
 
 - var nav = require('@data/nav')
 

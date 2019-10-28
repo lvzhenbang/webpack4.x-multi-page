@@ -10,7 +10,7 @@ div(class="sj_loan_product container")
   div(class="sj_product-list")
     each item in product.list && product.list.length ? product.list : []
       div(class="sj_product-item")
-        a(href=item.href)
+        a(href=item.href target="_blank")
           div(class="sj_left")
             div(class="sj_top")
               div= item.cn_name

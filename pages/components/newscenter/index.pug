@@ -13,12 +13,12 @@ div(class="sj_news-center")
 
     div(class="sj_tab-content")
       each item, index in news.list && news.list.length ? news.list : []
-        div(class="sj_new-item" class= index % 2 === 0 ? '' : 'reverse'  data-type=item.type  class=item.type !== '1' ? 'hide' : '' style=item.type !== '1' ? 'display: none' : '')
+        div(class="sj_new-item" class= index % 2 === 0 ? '' : 'reverse' data-type=item.type class=item.type !== '1' ? 'hide' : '' style=item.type !== '1' ? 'display: none' : '')
           a(href=item.href)
             img(class="lazy" src='' data-src=item.img alt=item.alt)
           div(class="sj_new-content")
             div(class="sj_new-title")
-              a(href=item.href)= item.title
+              a(href=item.href target="_blank")= item.title
             div(class="sj_new-link") 原文链接
             div(class="sj_new-date")= item.date
             div(class="sj_new-desc multi-line")= item.desc

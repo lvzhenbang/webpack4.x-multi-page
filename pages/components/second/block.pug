@@ -25,7 +25,7 @@ mixin block-item(item)
       else if citem.type === 'link'
         div(class="sj_link")
           span= citem.link.name
-          a(href=citem.link.href)= citem.link.href
+          a(href=citem.link.href target="_blank")= citem.link.href
       else if citem.type === 'd-title'
         div(class="sj_dtitle")
           span= citem.title.text
